@@ -7,7 +7,7 @@
 # File coded by: Billinge Group members and community contributors.
 #
 # See GitHub contributions for a more detailed list of contributors.
-# https://github.com/8bitsam/actiongraphgen/graphs/contributors
+# https://github.com/diffpy/diffpy.fourigui/graphs/contributors
 #
 # See LICENSE.rst for license information.
 #
