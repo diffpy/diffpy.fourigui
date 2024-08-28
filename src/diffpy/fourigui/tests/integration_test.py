@@ -12,17 +12,17 @@ class TestGui(unittest.TestCase):
         self.test_gui = Gui()
 
         # set up test data
-        self.test_sofq = h5py.File("diffpy/tests/testdata/sofq.h5")["data"]
-        self.test_sofq_cut_10to40px = h5py.File("diffpy/tests/testdata/sofq_cut_10to40px.h5")["data"]
-        self.test_sofq_cut_15to35px = h5py.File("diffpy/tests/testdata/sofq_cut_15to35px.h5")["data"]
-        self.test_gofr = h5py.File("diffpy/tests/testdata/gofr.h5")["data"]
-        self.test_gofr_cut_10to40px = h5py.File("diffpy/tests/testdata/gofr_from_sofq_cut_10to40px.h5")["data"]
-        self.test_gofr_cut_15to35px = h5py.File("diffpy/tests/testdata/gofr_from_sofq_cut_15to35px.h5")["data"]
+        self.test_sofq = h5py.File("src/diffpy/fourigui/tests/testdata/sofq.h5")["data"]
+        self.test_sofq_cut_10to40px = h5py.File("src/diffpy/fourigui/tests/testdata/sofq_cut_10to40px.h5")["data"]
+        self.test_sofq_cut_15to35px = h5py.File("src/diffpy/fourigui/tests/testdata/sofq_cut_15to35px.h5")["data"]
+        self.test_gofr = h5py.File("src/diffpy/fourigui/tests/testdata/gofr.h5")["data"]
+        self.test_gofr_cut_10to40px = h5py.File("src/diffpy/fourigui/tests/testdata/gofr_from_sofq_cut_10to40px.h5")["data"]
+        self.test_gofr_cut_15to35px = h5py.File("src/diffpy/fourigui/tests/testdata/gofr_from_sofq_cut_15to35px.h5")["data"]
 
     def test_load_cube_testdataset1(self):
         # given
         self.test_gui.filename_entry.delete(0, "end")
-        self.test_gui.filename_entry.insert(0, "diffpy/tests/testdata/sofq.h5")
+        self.test_gui.filename_entry.insert(0, "src/diffpy/fourigui/tests/testdata/sofq.h5")
 
         # when
         self.test_gui.load_cube()
@@ -34,7 +34,7 @@ class TestGui(unittest.TestCase):
     def test_load_cube_testdataset2(self):
         # given
         self.test_gui.filename_entry.delete(0, "end")
-        self.test_gui.filename_entry.insert(0, "diffpy/tests/testdata/sofq_cut_10to40px.h5")
+        self.test_gui.filename_entry.insert(0, "src/diffpy/fourigui/tests/testdata/sofq_cut_10to40px.h5")
 
         # when
         self.test_gui.load_cube()
@@ -46,7 +46,7 @@ class TestGui(unittest.TestCase):
     def test_load_cube_testdataset3(self):
         # given
         self.test_gui.filename_entry.delete(0, "end")
-        self.test_gui.filename_entry.insert(0, "diffpy/tests/testdata/sofq_cut_15to35px.h5")
+        self.test_gui.filename_entry.insert(0, "src/diffpy/fourigui/tests/testdata/sofq_cut_15to35px.h5")
 
         # when
         self.test_gui.load_cube()

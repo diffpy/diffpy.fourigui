@@ -11,7 +11,7 @@ class TestGui(unittest.TestCase):
         self.test_gui = Gui()
 
         # set up dummy data
-        self.dummydata = h5py.File("diffpy/tests/testdata/dummydata.h5")["data"]
+        self.dummydata = h5py.File("src/diffpy/fourigui/tests/testdata/dummydata.h5")["data"]
 
     def test_init(self):
         self.assertFalse(self.test_gui.loaded)
@@ -24,7 +24,7 @@ class TestGui(unittest.TestCase):
     def test_load_cube_nothing_loaded(self):
         # given
         self.test_gui.filename_entry.delete(0, "end")
-        self.test_gui.filename_entry.insert(0, "diffpy/tests/testdata/dummydata.h5")
+        self.test_gui.filename_entry.insert(0, "src/diffpy/fourigui/tests/testdata/dummydata.h5")
 
         # when
         self.test_gui.load_cube()
@@ -36,7 +36,7 @@ class TestGui(unittest.TestCase):
         # given
         self.test_gui.loaded
         self.test_gui.filename_entry.delete(0, "end")
-        self.test_gui.filename_entry.insert(0, "diffpy/tests/testdata/dummydata.h5")
+        self.test_gui.filename_entry.insert(0, "src/diffpy/fourigui/tests/testdata/dummydata.h5")
 
         # when
         self.test_gui.load_cube()
