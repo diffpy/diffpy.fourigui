@@ -19,12 +19,8 @@ def test_data():
         "test_sofq_cut_10to40px": h5py.File("tests/testdata/sofq_cut_10to40px.h5")["data"],
         "test_sofq_cut_15to35px": h5py.File("tests/testdata/sofq_cut_15to35px.h5")["data"],
         "test_gofr": h5py.File("tests/testdata/gofr.h5")["data"],
-        "test_gofr_cut_10to40px": h5py.File("tests/testdata/gofr_from_sofq_cut_10to40px.h5")[
-            "data"
-        ],
-        "test_gofr_cut_15to35px": h5py.File("tests/testdata/gofr_from_sofq_cut_15to35px.h5")[
-            "data"
-        ],
+        "test_gofr_cut_10to40px": h5py.File("tests/testdata/gofr_from_sofq_cut_10to40px.h5")["data"],
+        "test_gofr_cut_15to35px": h5py.File("tests/testdata/gofr_from_sofq_cut_15to35px.h5")["data"],
     }
 
 
