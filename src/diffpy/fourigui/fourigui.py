@@ -8,7 +8,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 
-matplotlib.use("tk.TkAgg")
+matplotlib.use("tkagg")
 
 WIDTH = 920
 HEIGHT = 630
