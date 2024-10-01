@@ -16,6 +16,6 @@ jobs:
     with:
       project: diffpy.fourigui
       c_extension: false
-      headless: false
+      headless: true
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
