@@ -90,7 +90,7 @@ Support and Contribute
 
 `Diffpy user group <https://groups.google.com/g/diffpy-users>`_ is the discussion forum for general questions and discussions about the use of diffpy.fourigui. Please join the diffpy.fourigui users community by joining the Google group. The diffpy.fourigui project welcomes your expertise and enthusiasm!
 
-If you see a bug or want to request a feature, please `report it as an issue <https://github.com/diffpy/diffpy.fourigui/issues>`_ and/or `submit a fix as a PR <https://github.com/diffpy/diffpy.fourigui/pulls>`_. You can also post it to the `Diffpy user group <https://groups.google.com/g/diffpy-users>`_. 
+If you see a bug or want to request a feature, please `report it as an issue <https://github.com/diffpy/diffpy.fourigui/issues>`_ and/or `submit a fix as a PR <https://github.com/diffpy/diffpy.fourigui/pulls>`_. You can also post it to the `Diffpy user group <https://groups.google.com/g/diffpy-users>`_.
 
 Feel free to fork the project and contribute. To install diffpy.fourigui
 in a development mode, with its sources being directly used by Python
