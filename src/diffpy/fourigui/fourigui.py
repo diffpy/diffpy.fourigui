@@ -477,7 +477,7 @@ class Gui(tk.Frame):
             R2 = (XS - X // 2) ** 2 + (YS - Y // 2) ** 2 + (ZS - Z // 2) ** 2
             mask = (R2 <= r2_inner) | (R2 >= r2_outer)
             sphere[mask] = np.nan
-            
+
             if self.space.get():
                 self.cube_real = self.cube
                 self.cube = self.cube_reci * sphere
