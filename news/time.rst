@@ -16,7 +16,7 @@
 
 **Fixed:**
 
-* remove time dependency in pip, conda.txt 
+* remove time dependency in pip, conda.txt
 
 **Security:**
 
