@@ -392,15 +392,12 @@ class Gui(tk.Frame):
         """
 
         def perform_fft(fftholder):
-            time0 = time.time()
             fftholder = np.nan_to_num(fftholder)
             size = list(fftholder.shape)
             fftholder = np.fft.ifftshift(fftholder)
             fftholder = np.fft.fftn(fftholder, s=size, norm="ortho")
             fftholder = np.fft.fftshift(fftholder)
             fftholder = fftholder.real
-            fftdur = time.time() - time0
-            print("- FFT performed in {} sec.".format(round(fftdur, 4)))
             return fftholder
 
         if not self.transformed and not self.transcutted:  # no fft at all yet
