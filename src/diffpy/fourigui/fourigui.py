@@ -477,12 +477,11 @@ class Gui(tk.Frame):
             R2 = (XS - X // 2) ** 2 + (YS - Y // 2) ** 2 + (ZS - Z // 2) ** 2
             mask = (R2 <= r2_inner) | (R2 >= r2_outer)
             sphere[mask] = np.nan
-            
+
             if self.space.get():
                 self.cube_real = self.cube
                 self.cube = self.cube_reci * sphere
                 self.cube_recicut = self.cube
-                print("- Cutoff below {} and beyond {} in {} sec.".format(qmin, qmax, round(cutdur, 4)))
                 self.fft()
             else:
                 self.cube_reci = self.cube
@@ -490,7 +489,6 @@ class Gui(tk.Frame):
                 self.cube_recicut = self.cube
                 self.plot_plane()
                 self.intensity_upd_global()
-                print("- Cutoff below {} and beyond {} in {} sec.".format(qmin, qmax, round(cutdur, 4)))
 
             self.cutted = True
 
