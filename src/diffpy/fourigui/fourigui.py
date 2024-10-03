@@ -1,4 +1,3 @@
-import time
 import tkinter as tk
 from tkinter.ttk import Button
 
@@ -392,15 +391,12 @@ class Gui(tk.Frame):
         """
 
         def perform_fft(fftholder):
-            time0 = time.time()
             fftholder = np.nan_to_num(fftholder)
             size = list(fftholder.shape)
             fftholder = np.fft.ifftshift(fftholder)
             fftholder = np.fft.fftn(fftholder, s=size, norm="ortho")
             fftholder = np.fft.fftshift(fftholder)
             fftholder = fftholder.real
-            fftdur = time.time() - time0
-            print("- FFT performed in {} sec.".format(round(fftdur, 4)))
             return fftholder
 
         if not self.transformed and not self.transcutted:  # no fft at all yet
@@ -469,7 +465,6 @@ class Gui(tk.Frame):
         """
         if not self.cutted:
 
-            time0 = time.time()
             X, Y, Z = self.cube.shape
             sphere = np.ones((X, Y, Z))
             qmin = float(self.qminentry.get())
@@ -482,13 +477,11 @@ class Gui(tk.Frame):
             R2 = (XS - X // 2) ** 2 + (YS - Y // 2) ** 2 + (ZS - Z // 2) ** 2
             mask = (R2 <= r2_inner) | (R2 >= r2_outer)
             sphere[mask] = np.nan
-            cutdur = time.time() - time0
 
             if self.space.get():
                 self.cube_real = self.cube
                 self.cube = self.cube_reci * sphere
                 self.cube_recicut = self.cube
-                print("- Cutoff below {} and beyond {} in {} sec.".format(qmin, qmax, round(cutdur, 4)))
                 self.fft()
             else:
                 self.cube_reci = self.cube
@@ -496,7 +489,6 @@ class Gui(tk.Frame):
                 self.cube_recicut = self.cube
                 self.plot_plane()
                 self.intensity_upd_global()
-                print("- Cutoff below {} and beyond {} in {} sec.".format(qmin, qmax, round(cutdur, 4)))
 
             self.cutted = True
 
