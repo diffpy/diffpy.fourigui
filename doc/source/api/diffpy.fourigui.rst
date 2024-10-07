@@ -1,9 +1,7 @@
 :tocdepth: -1
 
-|title|
-=======
-
-.. |title| replace:: diffpy.fourigui package
+diffpy.fourigui package
+=======================
 
 .. automodule:: diffpy.fourigui
     :members:
@@ -14,17 +12,12 @@ Subpackages
 -----------
 
 .. toctree::
-   diffpy.fourigui.example_package
+    :titlesonly:
 
-Submodules
-----------
-
-|module|
---------
-
-.. |module| replace:: diffpy.fourigui.example_submodule module
-
-.. automodule:: diffpy.fourigui.example_submodule
-    :members:
-    :undoc-members:
-    :show-inheritance:
+    diffpy.fourigui.dist
+    diffpy.fourigui.requirements
+    diffpy.fourigui.news
+    diffpy.fourigui..github
+    diffpy.fourigui.doc
+    diffpy.fourigui..git
+    diffpy.fourigui.src
