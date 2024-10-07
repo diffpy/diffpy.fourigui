@@ -18,6 +18,10 @@
 # package version
 from diffpy.fourigui.version import __version__
 
+from . import fourigui
+
+__all__ = ["fourigui"]
+
 # silence the pyflakes syntax checker
 assert __version__ or True
 
