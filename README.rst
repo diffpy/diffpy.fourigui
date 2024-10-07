@@ -52,7 +52,7 @@ Citation
 
 If you use diffpy.fourigui in a scientific publication, we would like you to cite this package as
 
-        S. Y. Harouna-Mayer, S. Tao, Z. Gong, M. v Zimmermann, D. Koziej, A.-C. Dippel, and S. J. L. Billinge
+        S. Y. Harouna-Mayer, S. Tao, Z. Gong, M. V. Zimmermann, D. Koziej, A.-C. Dippel, and S. J. L. Billinge
         `Real-Space Texture and Pole-Figure Analysis Using the 3D Pair Distribution
         Function on a Platinum Thin Film <https://doi.org/10.1107/S2052252522006674>`. *IUCrJ* **9 (5)**, 594–603 (2022).
 
