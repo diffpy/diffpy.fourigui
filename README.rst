@@ -128,6 +128,3 @@ Contact
 -------
 
 For more information on diffpy.fourigui please visit the project `web-page <https://diffpy.github.io/>`_ or email Prof. Simon Billinge at sb2896@columbia.edu.
-
-
-This is a test
