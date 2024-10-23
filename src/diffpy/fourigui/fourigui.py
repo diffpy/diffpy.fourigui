@@ -502,6 +502,9 @@ class Gui(tk.Frame):
             self.intensity_upd_global()
 
     def redocutuff(self):
+        """
+        Redo the cutoff operation depending on the current space (real or reciprocal).
+        """
         if self.space.get():  # in real space
             self.cube_realcut = self.cube
             if not self.transformed:
@@ -514,6 +517,9 @@ class Gui(tk.Frame):
         self.intensity_upd_global()
 
     def newcutoff(self):
+        """
+        Apply a new cutoff based on the current space and cutoff settings.
+        """
         if self.cutoff.get():
             if self.space.get() and self.transformed:
                 self.cube = self.cube_real
@@ -524,6 +530,9 @@ class Gui(tk.Frame):
         self.applycutoff()
 
     def plot_next_plane(self):
+        """
+        Plot the next plane in the dataset, looping back to the first if at the end.
+        """
         n = self.plane_num.get()
         if n == len(self.cube[self.axis.get()]) - 1:
             n = 0
@@ -549,6 +558,9 @@ class Gui(tk.Frame):
         self.plot_next_plane()
 
     def multiple_funcs(*funcs):
+        """
+        Executes multiple functions passed as arguments in sequence.
+        """
         for func in funcs:
             func
 
