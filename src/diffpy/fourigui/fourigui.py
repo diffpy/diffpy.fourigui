@@ -21,6 +21,7 @@ class Gui(tk.Frame):
         self.initUI()
 
     def initUI(self):
+        """Initialize the GUI for fourigui"""
 
         self.loaded = False  # denotes whether a dataset is loaded
         self.transformed = False  # denotes whether dataset is Fourier transformed
@@ -533,7 +534,7 @@ class Gui(tk.Frame):
 
     def animation(self):
         """
-        slices through the 3D array along the selcted axis
+        slices through the 3D array along the selected axis
         """
         try:
             if not self.anientry.get():
