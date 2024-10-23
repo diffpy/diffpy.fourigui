@@ -71,20 +71,18 @@ To add "conda-forge" to the conda channels, run the following in a terminal. ::
 We want to install our packages in a suitable conda environment.
 The following creates and activates a new environment named ``diffpy.fourigui_env`` ::
 
-        conda create -n diffpy.fourigui_env python=3
+        conda create -n diffpy.fourigui_env diffpy.fourigui
         conda activate diffpy.fourigui_env
 
-Then, to fully install ``diffpy.fourigui`` in our active environment, run ::
+To confirm that the installation was successful, type ::
 
-        conda install diffpy.fourigui
+        python -c "import diffpy.fourigui; print(diffpy.fourigui.__version__)"
 
-Another option is to use ``pip`` to download and install the latest release from
+The output should print the latest version displayed on the badges above.
+
+If the above does not work, you can use ``pip`` to download and install the latest release from
 `Python Package Index <https://pypi.python.org>`_.
-To install using ``pip`` into your ``diffpy.fourigui_env`` environment, we will also have to install dependencies ::
-
-        pip install -r https://raw.githubusercontent.com/diffpy/diffpy.fourigui/main/requirements/run.txt
-
-and then install the package ::
+To install using ``pip`` into your ``diffpy.fourigui_env`` environment, type ::
 
         pip install diffpy.fourigui
 
@@ -93,6 +91,11 @@ If you prefer to install from sources, after installing the dependencies, obtain
 and run the following ::
 
         pip install .
+
+Getting Started
+---------------
+
+You may consult our `online documentation <https://diffpy.github.io/diffpy.fourigui>`_ for tutorials and API references.
 
 Support and Contribute
 ----------------------
