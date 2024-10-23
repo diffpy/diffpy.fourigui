@@ -74,17 +74,15 @@ The following creates and activates a new environment named ``diffpy.fourigui_en
         conda create -n diffpy.fourigui_env python=3
         conda activate diffpy.fourigui_env
 
-Then, to fully install ``diffpy.fourigui`` in our active environment, run ::
+To confirm that the installation was successful, type ::
 
-        conda install diffpy.fourigui
+        python -c "import diffpy.fourigui; print(diffpy.fourigui.__version__)"
 
-Another option is to use ``pip`` to download and install the latest release from
+The output should print the latest version displayed on the badges above.
+
+If the above does not work, you can use ``pip`` to download and install the latest release from
 `Python Package Index <https://pypi.python.org>`_.
-To install using ``pip`` into your ``diffpy.fourigui_env`` environment, we will also have to install dependencies ::
-
-        pip install -r https://raw.githubusercontent.com/diffpy/diffpy.fourigui/main/requirements/run.txt
-
-and then install the package ::
+To install using ``pip`` into your ``diffpy.fourigui_env`` environment, type ::
 
         pip install diffpy.fourigui
 
@@ -94,12 +92,17 @@ and run the following ::
 
         pip install .
 
+Getting Started
+---------------
+
+You may consult our `online documentation <https://diffpy.github.io/diffpy.fourigui>`_ for tutorials and API references.
+
 Support and Contribute
 ----------------------
 
 `Diffpy user group <https://groups.google.com/g/diffpy-users>`_ is the discussion forum for general questions and discussions about the use of diffpy.fourigui. Please join the diffpy.fourigui users community by joining the Google group. The diffpy.fourigui project welcomes your expertise and enthusiasm!
 
-If you see a bug or want to request a feature, please `report it as an issue <https://github.com/diffpy/diffpy.fourigui/issues>`_ and/or `submit a fix as a PR <https://github.com/diffpy/diffpy.fourigui/pulls>`_. You can also post it to the `Diffpy user group <https://groups.google.com/g/diffpy-users>`_.
+If you see a bug or want to request a feature, please `report it as an issue <https://github.com/diffpy/diffpy.fourigui/issues>`_ and/or `submit a fix as a PR <https://github.com/diffpy/diffpy.fourigui/pulls>`_. You can also post it to the `Diffpy user group <https://groups.google.com/g/diffpy-users>`_. 
 
 Feel free to fork the project and contribute. To install diffpy.fourigui
 in a development mode, with its sources being directly used by Python
