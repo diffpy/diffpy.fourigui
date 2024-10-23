@@ -71,7 +71,7 @@ To add "conda-forge" to the conda channels, run the following in a terminal. ::
 We want to install our packages in a suitable conda environment.
 The following creates and activates a new environment named ``diffpy.fourigui_env`` ::
 
-        conda create -n diffpy.fourigui_env python=3
+        conda create -n diffpy.fourigui_env diffpy.fourigui
         conda activate diffpy.fourigui_env
 
 To confirm that the installation was successful, type ::
