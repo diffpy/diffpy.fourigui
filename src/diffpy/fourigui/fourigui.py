@@ -371,8 +371,12 @@ class Gui(tk.Frame):
         elif self.axis.get() == 2:
             plane = self.cube[:, :, self.plane_num.get()]
         nan_ratio = np.count_nonzero(np.isnan(plane)) / plane.size
-        self.localmax["text"] = "{}".format(np.format_float_scientific(np.nanmax(plane), 1))
-        self.localmin["text"] = "{}".format(np.format_float_scientific(np.nanmin(plane), 1))
+        if np.isnan(plane).all():
+            self.localmax["text"] = "NaN"
+            self.localmin["text"] = "NaN"
+        else:
+            self.localmax["text"] = "{}".format(np.format_float_scientific(np.nanmax(plane), 1))
+            self.localmin["text"] = "{}".format(np.format_float_scientific(np.nanmin(plane), 1))
         self.localsum["text"] = "{}".format(np.format_float_scientific(np.nansum(plane), 1))
         self.localnanratio["text"] = "{}".format(round(nan_ratio, 2))
 
