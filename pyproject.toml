@@ -14,7 +14,7 @@ maintainers = [
 description = "Tool for visualizing 3D diffraction and PDF Images."
 keywords = ['diffraction', 'pdf', 'pair distribution function', 'gui']
 readme = "README.rst"
-requires-python = ">=3.10, <3.13"
+requires-python = ">=3.11, <3.14"
 classifiers = [
         'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
@@ -28,6 +28,7 @@ classifiers = [
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
         'Topic :: Scientific/Engineering :: Physics',
         'Topic :: Scientific/Engineering :: Chemistry',
 ]
