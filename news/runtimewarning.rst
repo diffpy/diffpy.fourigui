@@ -1,6 +1,6 @@
 **Added:**
 
-* Adds condition to fix `RuntimeWarning`
+* <news item>
 
 **Changed:**
 
@@ -16,7 +16,7 @@
 
 **Fixed:**
 
-* <news item>
+* Resolved `RuntimeWarning` through condition to handle arrays containing only NaN values
 
 **Security:**
 
