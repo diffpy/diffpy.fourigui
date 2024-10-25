@@ -35,6 +35,7 @@ Table of contents
    license
    release
    Package API <api/diffpy.fourigui>
+   tutorial
 
 =======
 Indices
