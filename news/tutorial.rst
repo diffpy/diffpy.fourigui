@@ -1,6 +1,6 @@
 **Added:**
 
-* <news item>
+* tutorial added to documentation
 
 **Changed:**
 
