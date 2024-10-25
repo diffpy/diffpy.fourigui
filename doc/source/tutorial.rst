@@ -5,7 +5,7 @@ Tutorial
 
 Input files:
 
-:download:`test data <diffpy.fourigui/tests/testdata/gofr_.h5>` containing h5 files
+**download test data ``gofr_.h5`` at https://github.com/diffpy/diffpy.fourigui/tree/main/tests/testdata**
 
 Procedure:
 
