@@ -16,7 +16,7 @@
 
 **Fixed:**
 
-* Surpressed `RuntimeWarning` error for the `applycutoff` function
+* Surpressed `RuntimeWarning` for the `applycutoff` function
 
 **Security:**
 
