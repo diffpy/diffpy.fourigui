@@ -371,18 +371,18 @@ class Gui(tk.Frame):
         elif self.axis.get() == 2:
             plane = self.cube[:, :, self.plane_num.get()]
         nan_ratio = np.count_nonzero(np.isnan(plane)) / plane.size
-        self.localmax["text"] = "{}".format(np.format_float_scientific(np.nanmax(plane), 1))
-        self.localmin["text"] = "{}".format(np.format_float_scientific(np.nanmin(plane), 1))
-        self.localsum["text"] = "{}".format(np.format_float_scientific(np.nansum(plane), 1))
-        self.localnanratio["text"] = "{}".format(round(nan_ratio, 2))
+        self.localmax["text"] = f"{np.format_float_scientific(np.nanmax(plane), 1)}"
+        self.localmin["text"] = f"{np.format_float_scientific(np.nanmin(plane), 1)}"
+        self.localsum["text"] = f"{np.format_float_scientific(np.nansum(plane), 1)}"
+        self.localnanratio["text"] = f"{round(nan_ratio, 2)}"
 
     def intensity_upd_global(self):
-        """show global intensity minimum, maximum and sum of 3D array"""
+        """Load global intensity minimum, maximum and sum of 3D array"""
         self.intensity_upd_local()
         nan_ratio = np.count_nonzero(np.isnan(self.cube)) / self.cube.size
-        self.globalmax["text"] = "{}".format(np.format_float_scientific(np.nanmax(self.cube), 1))
-        self.globalmin["text"] = "{}".format(np.format_float_scientific(np.nanmin(self.cube), 1))
-        self.globalsum["text"] = "{}".format(np.format_float_scientific(np.nansum(self.cube), 1))
+        self.globalmax["text"] = f"{np.format_float_scientific(np.nanmax(self.cube), 1)}"
+        self.globalmin["text"] = f"{np.format_float_scientific(np.nanmin(self.cube), 1)}"
+        self.globalsum["text"] = f"{np.format_float_scientific(np.nansum(self.cube), 1)}"
         self.globalnanratio["text"] = "{}".format(round(nan_ratio, 2))
 
     def fft(self):
