@@ -459,25 +459,33 @@ class Gui(tk.Frame):
 
     def applycutoff(self):
         """
+        shape the reciprocal-space array
+
         reassign all voxels with distance smaller than qmin and greater than qmax
-        from the central voxel to 0.0
+        to np.nan.
+
+        parameters:
+        -----------
         qmin, qmax is loaded from the qmin, qmax input panel
-        currently opperates in units of pixels
+        currently operates in units of pixels
+
+        Returns:
+        --------
+        nothing
         """
         if not self.cutted:
-
-            X, Y, Z = self.cube.shape
-            sphere = np.ones((X, Y, Z))
+            xdim, ydim, zdim = self.cube.shape
+            sphere = np.ones((xdim, ydim, zdim))
             qmin = float(self.qminentry.get())
             qmax = float(self.qmaxentry.get())
             # convert qmin to pixels
             # convert qmax to pixels
             r2_inner = qmin**2
             r2_outer = qmax**2
-            XS, YS, ZS = np.meshgrid(np.arange(X), np.arange(Y), np.arange(Z))
-            R2 = (XS - X // 2) ** 2 + (YS - Y // 2) ** 2 + (ZS - Z // 2) ** 2
-            mask = (R2 <= r2_inner) | (R2 >= r2_outer)
-            sphere[mask] = np.nan
+            i, j, k = np.meshgrid(np.arange(xdim), np.arange(ydim), np.arange(zdim))
+            r2 = (i - xdim // 2) ** 2 + (j - ydim // 2) ** 2 + (k - zdim // 2) ** 2
+            mask = (r2 <= r2_inner) | (r2 >= r2_outer)  # True if voxel is out of range
+            sphere[mask] = np.nan  # therefore set to np.nan if out of range
 
             if self.space.get():
                 self.cube_real = self.cube
