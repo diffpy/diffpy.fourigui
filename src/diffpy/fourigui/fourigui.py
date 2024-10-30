@@ -461,7 +461,7 @@ class Gui(tk.Frame):
         reassign all voxels with distance smaller than qmin and greater than qmax
         from the central voxel to 0.0
         qmin, qmax is loaded from the qmin, qmax input panel
-        currently opperates in units of pixels
+        currently operates in units of pixels
         """
         if not self.cutted:
 
