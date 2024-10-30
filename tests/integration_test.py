@@ -1,4 +1,5 @@
 import unittest
+import warnings
 
 import h5py
 import numpy as np
@@ -105,7 +106,9 @@ class TestGui(unittest.TestCase):
         self.test_gui.qmaxentry.insert(0, "40")
 
         # when
-        self.test_gui.applycutoff()
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", category=RuntimeWarning)
+            self.test_gui.applycutoff()
         result = self.test_gui.cube
 
         # then
@@ -119,7 +122,9 @@ class TestGui(unittest.TestCase):
         self.test_gui.qmaxentry.insert(0, "35")
 
         # when
-        self.test_gui.applycutoff()
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", category=RuntimeWarning)
+            self.test_gui.applycutoff()
         result = self.test_gui.cube
 
         # then
