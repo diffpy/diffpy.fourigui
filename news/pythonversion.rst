@@ -12,7 +12,7 @@
 
 **Removed:**
 
-* * Removed support for python 3.10
+* Removed support for python `<3.11`
 
 **Fixed:**
 
