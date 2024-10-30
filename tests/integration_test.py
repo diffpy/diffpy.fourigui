@@ -105,7 +105,8 @@ class TestGui(unittest.TestCase):
         self.test_gui.qminentry.insert(0, "10")
         self.test_gui.qmaxentry.insert(0, "40")
 
-        # surpressed RuntimeWarning so warning isn't generated when test encounters slice of all NaNs
+        # Desired behavior is nans in the arrays below qmin and above qmax.  As a result, np.nanmax will generate runtimewarnings when it
+        # encounters slices that are all nans. capture these so tests pass cleanly without warnings
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", category=RuntimeWarning)
             # when
@@ -121,8 +122,9 @@ class TestGui(unittest.TestCase):
         self.test_gui.cube = self.test_sofq
         self.test_gui.qminentry.insert(0, "15")
         self.test_gui.qmaxentry.insert(0, "35")
-
-        # surpressed RuntimeWarning so warning isn't generated when test encounters slice of all NaNs
+        
+        # Desired behavior is nans in the arrays below qmin and above qmax.  As a result, np.nanmax will generate runtimewarnings when it
+        # encounters slices that are all nans. capture these so tests pass cleanly without warnings
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", category=RuntimeWarning)
             # when
