@@ -371,18 +371,18 @@ class Gui(tk.Frame):
         elif self.axis.get() == 2:
             plane = self.cube[:, :, self.plane_num.get()]
         nan_ratio = np.count_nonzero(np.isnan(plane)) / plane.size
-        self.localmax["text"] = "{}".format(np.format_float_scientific(np.nanmax(plane), 1))
-        self.localmin["text"] = "{}".format(np.format_float_scientific(np.nanmin(plane), 1))
-        self.localsum["text"] = "{}".format(np.format_float_scientific(np.nansum(plane), 1))
-        self.localnanratio["text"] = "{}".format(round(nan_ratio, 2))
+        self.localmax["text"] = f"{np.format_float_scientific(np.nanmax(plane), 1)}"
+        self.localmin["text"] = f"{np.format_float_scientific(np.nanmin(plane), 1)}"
+        self.localsum["text"] = f"{np.format_float_scientific(np.nansum(plane), 1)}"
+        self.localnanratio["text"] = f"{round(nan_ratio, 2)}"
 
     def intensity_upd_global(self):
-        """show global intensity minimum, maximum and sum of 3D array"""
+        """Load global intensity minimum, maximum and sum of 3D array"""
         self.intensity_upd_local()
         nan_ratio = np.count_nonzero(np.isnan(self.cube)) / self.cube.size
-        self.globalmax["text"] = "{}".format(np.format_float_scientific(np.nanmax(self.cube), 1))
-        self.globalmin["text"] = "{}".format(np.format_float_scientific(np.nanmin(self.cube), 1))
-        self.globalsum["text"] = "{}".format(np.format_float_scientific(np.nansum(self.cube), 1))
+        self.globalmax["text"] = f"{np.format_float_scientific(np.nanmax(self.cube), 1)}"
+        self.globalmin["text"] = f"{np.format_float_scientific(np.nanmin(self.cube), 1)}"
+        self.globalsum["text"] = f"{np.format_float_scientific(np.nansum(self.cube), 1)}"
         self.globalnanratio["text"] = "{}".format(round(nan_ratio, 2))
 
     def fft(self):
@@ -459,25 +459,33 @@ class Gui(tk.Frame):
 
     def applycutoff(self):
         """
+        shape the reciprocal-space array
+
         reassign all voxels with distance smaller than qmin and greater than qmax
-        from the central voxel to 0.0
+        to np.nan.
+
+        parameters:
+        -----------
         qmin, qmax is loaded from the qmin, qmax input panel
-        currently opperates in units of pixels
+        currently operates in units of pixels
+
+        Returns:
+        --------
+        nothing
         """
         if not self.cutted:
-
-            X, Y, Z = self.cube.shape
-            sphere = np.ones((X, Y, Z))
+            xdim, ydim, zdim = self.cube.shape
+            sphere = np.ones((xdim, ydim, zdim))
             qmin = float(self.qminentry.get())
             qmax = float(self.qmaxentry.get())
             # convert qmin to pixels
             # convert qmax to pixels
             r2_inner = qmin**2
             r2_outer = qmax**2
-            XS, YS, ZS = np.meshgrid(np.arange(X), np.arange(Y), np.arange(Z))
-            R2 = (XS - X // 2) ** 2 + (YS - Y // 2) ** 2 + (ZS - Z // 2) ** 2
-            mask = (R2 <= r2_inner) | (R2 >= r2_outer)
-            sphere[mask] = np.nan
+            i, j, k = np.meshgrid(np.arange(xdim), np.arange(ydim), np.arange(zdim))
+            r2 = (i - xdim // 2) ** 2 + (j - ydim // 2) ** 2 + (k - zdim // 2) ** 2
+            mask = (r2 <= r2_inner) | (r2 >= r2_outer)  # True if voxel is out of range
+            sphere[mask] = np.nan  # therefore set to np.nan if out of range
 
             if self.space.get():
                 self.cube_real = self.cube

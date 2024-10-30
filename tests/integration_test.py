@@ -123,6 +123,7 @@ class TestGui(unittest.TestCase):
         result = self.test_gui.cube
 
         # then
+        # with self.assertWarns(RuntimeWarning):
         self.assertTrue(np.allclose(np.nan_to_num(result), np.nan_to_num(self.test_sofq_cut_15to35px)))
 
 
