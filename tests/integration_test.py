@@ -121,7 +121,7 @@ class TestGui(unittest.TestCase):
         self.test_gui.qminentry.insert(0, "15")
         self.test_gui.qmaxentry.insert(0, "35")
 
-        # when
+        # surpressed RuntimeWarning so warning isn't generated when test encounters slice of all NaNs
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", category=RuntimeWarning)
             self.test_gui.applycutoff()
