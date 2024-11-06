@@ -16,7 +16,7 @@
 
 **Fixed:**
 
-* Surpress the `RuntimeWarning` in tests for the `applycutoff` function
+* Suppress the `RuntimeWarning` in tests for the `applycutoff` function
 
 **Security:**
 
