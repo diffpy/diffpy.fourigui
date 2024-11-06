@@ -9,13 +9,13 @@ assignees: ""
 ### Release checklist for GitHub contributors
 
 - [ ] All PRs/issues attached to the release are merged.
-- [x] All the badges on the README are passing.
-- [x] License information is verified as correct. If you are unsure, please comment below.
-- [x] Locally rendered documentation contains all appropriate pages, including API references (check no modules are
+- [ ] All the badges on the README are passing.
+- [ ] License information is verified as correct. If you are unsure, please comment below.
+- [ ] Locally rendered documentation contains all appropriate pages, including API references (check no modules are
   missing), tutorials, and other human written text is up-to-date with any changes in the code.
-- [x] Installation instructions in the README, documentation and on the website (e.g., diffpy.org) updated.
-- [x] Successfully run any tutorial examples or do functional testing with the latest Python version
-- [x] Grammar and writing quality have been checked (no typos).
+- [ ] Installation instructions in the README, documentation and on the website (e.g., diffpy.org) updated.
+- [ ] Successfully run any tutorial examples or do functional testing with the latest Python version
+- [ ] Grammar and writing quality have been checked (no typos).
 
 Please mention @sbillinge when you are ready for release. Include any additional comments necessary, such as
 version information and details about the pre-release here:
