@@ -32,6 +32,9 @@ classifiers = [
         'Topic :: Scientific/Engineering :: Chemistry',
 ]
 
+[project.scripts]
+fourigui = "diffpy.fourigui.fourigui:main"
+
 [project.urls]
 Homepage = "https://github.com/diffpy/diffpy.fourigui/"
 Issues = "https://github.com/diffpy/diffpy.fourigui/issues/"
