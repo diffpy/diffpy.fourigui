@@ -394,8 +394,9 @@ class Gui(tk.Frame):
         def perform_fft(fftholder):
             fftholder = np.nan_to_num(fftholder)
             size = list(fftholder.shape)
+            axes = list(range(len(size))) 
             fftholder = np.fft.ifftshift(fftholder)
-            fftholder = np.fft.fftn(fftholder, s=size, norm="ortho")
+            fftholder = np.fft.fftn(fftholder, s=size, axes=axes, norm="ortho")
             fftholder = np.fft.fftshift(fftholder)
             fftholder = fftholder.real
             return fftholder
