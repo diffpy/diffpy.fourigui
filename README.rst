@@ -37,7 +37,7 @@
 
 Tool for visualizing 3D diffraction and PDF Images.
 
-* LONGER DESCRIPTION HERE* Diffpy.fourigui is a tool to visualize and process 3D data sets written with the Python programming language.
+* Diffpy.fourigui is a tool to visualize and process 3D data sets written with the Python programming language.
 Diffpy.fourigui always displays one slice perpendicular to one axis and allows scrolling through the 3D data set along
 the given axis with a slider. It shows feedback values such as global and local maxima, minima or NAN ratios.
 The matplotlib panel e.g. for zooming and saving figures is featured. Diffpy.fourigui is designed for the processing of 3D
