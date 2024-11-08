@@ -484,7 +484,7 @@ class Gui(tk.Frame):
             r2_outer = qmax**2
             i, j, k = np.meshgrid(np.arange(xdim), np.arange(ydim), np.arange(zdim))
             r2 = (i - xdim // 2) ** 2 + (j - ydim // 2) ** 2 + (k - zdim // 2) ** 2
-            mask = (r2 <= r2_inner) | (r2 >= r2_outer)  # True if voxel is out of range
+            mask = (r2 < r2_inner) | (r2 > r2_outer)  # True if voxel is out of range
             sphere[mask] = np.nan  # therefore set to np.nan if out of range
 
             if self.space.get():
