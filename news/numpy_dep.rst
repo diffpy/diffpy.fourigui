@@ -16,7 +16,7 @@
 
 **Fixed:**
 
-* Suppress the `RuntimeWarning` in tests for the `applycutoff` function
+* Fixed deprecation warning presented by numpy2
 
 **Security:**
 

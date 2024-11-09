@@ -155,10 +155,10 @@ class Gui(tk.Frame):
         anibutton.grid(row=8, column=4)
 
         # row 10-12 Fourier transformation
-        seperator = tk.Label(
+        separator = tk.Label(
             frame00, text=" "
         )  # __________________________________________________________________")
-        seperator.grid(row=9, column=0, columnspan=5)
+        separator.grid(row=9, column=0, columnspan=5)
         cutofflabel = tk.Label(frame00, text="cutoff frequency")
         cutofflabel.grid(row=10, column=2, columnspan=2)
         qminlabel = tk.Label(frame00, text="qmin [px]:")
@@ -390,8 +390,9 @@ class Gui(tk.Frame):
         def perform_fft(fftholder):
             fftholder = np.nan_to_num(fftholder)
             size = list(fftholder.shape)
+            axes = list(range(fftholder.ndim))
             fftholder = np.fft.ifftshift(fftholder)
-            fftholder = np.fft.fftn(fftholder, s=size, norm="ortho")
+            fftholder = np.fft.fftn(fftholder, s=size, axes=axes, norm="ortho")
             fftholder = np.fft.fftshift(fftholder)
             fftholder = fftholder.real
             return fftholder

@@ -56,7 +56,6 @@ If you use diffpy.fourigui in a scientific publication, we would like you to cit
         `Real-Space Texture and Pole-Figure Analysis Using the 3D Pair Distribution
         Function on a Platinum Thin Film <https://doi.org/10.1107/S2052252522006674>`_. *IUCrJ* **9 (5)**, 594–603 (2022).
 
-
 Installation
 ------------
 
@@ -125,7 +124,7 @@ trying to commit again.
 
 Improvements and fixes are always appreciated.
 
-Before contribuing, please read our `Code of Conduct <https://github.com/diffpy/diffpy.fourigui/blob/main/CODE_OF_CONDUCT.rst>`_.
+Before contributing, please read our `Code of Conduct <https://github.com/diffpy/diffpy.fourigui/blob/main/CODE_OF_CONDUCT.rst>`_.
 
 Contact
 -------
