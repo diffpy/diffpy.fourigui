@@ -1,6 +1,6 @@
 **Added:**
 
-* <news item>
+* Added `codespell` for spell check on all files.
 
 **Changed:**
 
@@ -16,7 +16,7 @@
 
 **Fixed:**
 
-* Suppress the `RuntimeWarning` in tests for the `applycutoff` function
+* <news item>
 
 **Security:**
 

@@ -1,6 +1,6 @@
 **Added:**
 
-* Add tutorial to API
+* Add tutorial to documentation
 
 **Changed:**
 

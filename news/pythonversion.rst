@@ -12,11 +12,11 @@
 
 **Removed:**
 
-* <news item>
+* Removed support for python `<3.11`
 
 **Fixed:**
 
-* Suppress the `RuntimeWarning` in tests for the `applycutoff` function
+* <news item>
 
 **Security:**
 

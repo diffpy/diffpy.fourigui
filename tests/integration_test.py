@@ -97,6 +97,19 @@ class TestGui(unittest.TestCase):
         # then
         self.assertTrue(np.allclose(result, self.test_gofr_cut_15to35px))
 
+        # Desired behavior is nans in the arrays below qmin and above qmax.  As a result, np.nanmax will generate
+        # runtimewarnings when it # encounters slices that are all nans. capture these so tests pass cleanly
+        # without warnings
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", category=RuntimeWarning)
+            # when
+            self.test_gui.applycutoff()
+        result = self.test_gui.cube
+
+        # then
+        # with self.assertWarns(RuntimeWarning):
+        self.assertTrue(np.allclose(np.nan_to_num(result), np.nan_to_num(self.test_sofq_cut_15to35px)))
+
 
 if __name__ == "__main__":
     unittest.main()
