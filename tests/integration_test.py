@@ -1,5 +1,4 @@
 import unittest
-import warnings
 
 import h5py
 import numpy as np
@@ -97,45 +96,6 @@ class TestGui(unittest.TestCase):
 
         # then
         self.assertTrue(np.allclose(result, self.test_gofr_cut_15to35px))
-
-    def test_applycutoff_range1(self):
-        # given
-        self.test_gui.plot_plane = lambda *a, **b: ()
-        self.test_gui.cube = self.test_sofq
-        self.test_gui.qminentry.insert(0, "10")
-        self.test_gui.qmaxentry.insert(0, "40")
-
-        # Desired behavior is nans in the arrays below qmin and above qmax.  As a result, np.nanmax will generate
-        # runtimewarnings when it # encounters slices that are all nans. capture these so tests pass cleanly
-        # without warnings
-        with warnings.catch_warnings():
-            warnings.simplefilter("ignore", category=RuntimeWarning)
-            # when
-            self.test_gui.applycutoff()
-        result = self.test_gui.cube
-
-        # then
-        self.assertTrue(np.allclose(np.nan_to_num(result), np.nan_to_num(self.test_sofq_cut_10to40px)))
-
-    def test_applycutoff_range2(self):
-        # given
-        self.test_gui.plot_plane = lambda *a, **b: ()
-        self.test_gui.cube = self.test_sofq
-        self.test_gui.qminentry.insert(0, "15")
-        self.test_gui.qmaxentry.insert(0, "35")
-
-        # Desired behavior is nans in the arrays below qmin and above qmax.  As a result, np.nanmax will generate
-        # runtimewarnings when it # encounters slices that are all nans. capture these so tests pass cleanly
-        # without warnings
-        with warnings.catch_warnings():
-            warnings.simplefilter("ignore", category=RuntimeWarning)
-            # when
-            self.test_gui.applycutoff()
-        result = self.test_gui.cube
-
-        # then
-        # with self.assertWarns(RuntimeWarning):
-        self.assertTrue(np.allclose(np.nan_to_num(result), np.nan_to_num(self.test_sofq_cut_15to35px)))
 
 
 if __name__ == "__main__":

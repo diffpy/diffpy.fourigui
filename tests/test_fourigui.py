@@ -1,6 +1,8 @@
+import tkinter as tk
 import unittest
 
 import h5py
+import numpy as np
 
 from diffpy.fourigui.fourigui import Gui
 
@@ -144,6 +146,82 @@ class TestGui(unittest.TestCase):
 
         # then
         self.assertTrue(self.test_gui.transformed and self.test_gui.transcutted)
+
+
+def test_applycutoff(mocker):
+    root = tk.Tk()
+    fg = Gui()
+    # qmin of 1 and qmax of 2 is expected to leave the central pixel and corner
+    # pixels as NaN's
+    mocker.patch.object(fg.qminentry, "get", return_value=1.0)
+    mocker.patch.object(fg.qmaxentry, "get", return_value=2.0)
+    mocker.patch.object(fg, "plot_plane")  # we don't want it to plot anything so intercept
+    fg.cutted = False
+    fg.cube = np.ones((5, 5, 5))
+    expected_ones = np.ones((5, 5, 5))
+    expected_recip = np.array(
+        [
+            [
+                [np.nan, np.nan, np.nan, np.nan, np.nan],
+                [np.nan, np.nan, np.nan, np.nan, np.nan],
+                [np.nan, np.nan, 1, np.nan, np.nan],
+                [np.nan, np.nan, np.nan, np.nan, np.nan],
+                [np.nan, np.nan, np.nan, np.nan, np.nan],
+            ],
+            [
+                [np.nan, np.nan, np.nan, np.nan, np.nan],
+                [np.nan, 1, 1, 1, np.nan],
+                [np.nan, 1, 1, 1, np.nan],
+                [np.nan, 1, 1, 1, np.nan],
+                [np.nan, np.nan, np.nan, np.nan, np.nan],
+            ],
+            [
+                [np.nan, np.nan, 1, np.nan, np.nan],
+                [np.nan, 1, 1, 1, np.nan],
+                [1, 1, np.nan, 1, 1],
+                [np.nan, 1, 1, 1, np.nan],
+                [np.nan, np.nan, 1, np.nan, np.nan],
+            ],
+            [
+                [np.nan, np.nan, np.nan, np.nan, np.nan],
+                [np.nan, 1, 1, 1, np.nan],
+                [np.nan, 1, 1, 1, np.nan],
+                [np.nan, 1, 1, 1, np.nan],
+                [np.nan, np.nan, np.nan, np.nan, np.nan],
+            ],
+            [
+                [np.nan, np.nan, np.nan, np.nan, np.nan],
+                [np.nan, np.nan, np.nan, np.nan, np.nan],
+                [np.nan, np.nan, 1, np.nan, np.nan],
+                [np.nan, np.nan, np.nan, np.nan, np.nan],
+                [np.nan, np.nan, np.nan, np.nan, np.nan],
+            ],
+        ]
+    )
+    # test the case where fg.space is 0
+    fg.applycutoff()
+    np.testing.assert_array_equal(fg.cube_reci, expected_ones)
+    np.testing.assert_array_equal(fg.cube_recicut, expected_recip)
+    root.destroy()  # Clean up Tkinter instance
+
+    # test the case where fg.space is 1
+    root = tk.Tk()
+    fg = Gui()
+    # qmin of 1 and qmax of 2 is expected to leave the central pixel and corner
+    # pixels as NaN's
+    mocker.patch.object(fg.qminentry, "get", return_value=1)
+    mocker.patch.object(fg.qmaxentry, "get", return_value=2)
+    mocker.patch.object(
+        fg, "fft"
+    )  # we don't want it to do the fft so intercept.  Should be tested separately (fixme).
+    fg.cutted = False
+    fg.cube_reci = np.ones((5, 5, 5))
+    fg.cube = np.ones((5, 5, 5))
+    mocker.patch.object(fg.space, "get", return_value=1)
+    fg.applycutoff()
+    np.testing.assert_array_equal(fg.cube_real, expected_ones)
+    np.testing.assert_array_equal(fg.cube_recicut, expected_recip)
+    root.destroy()  # Clean up Tkinter instance
 
 
 if __name__ == "__main__":

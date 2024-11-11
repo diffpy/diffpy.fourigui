@@ -291,14 +291,11 @@ class Gui(tk.Frame):
         self.slider.grid(row=0, column=0, padx=10, pady=10, sticky=tk.N + tk.E + tk.S + tk.W)
 
         if not self.loaded:
-
             fig, ax = plt.subplots(figsize=(4.95, 4.95))
             fig = plt.gcf()
             DPI = fig.get_dpi()
             fig.set_size_inches(500 / float(DPI), 500 / float(DPI))
-
             self.plane_num.set(np.shape(self.cube)[0] // 2)
-
             if self.axis.get() == 0:
                 self.im = plt.imshow(self.cube[self.plane_num.get(), :, :])
             elif self.axis.get() == 1:
@@ -319,7 +316,6 @@ class Gui(tk.Frame):
             self.canvas.draw()
             self.canvas.get_tk_widget().pack(side=tk.LEFT, fill=tk.BOTH, expand=1)
             self.loaded = True
-
         else:
             self.plot_plane()
             self.transformed = False
@@ -485,7 +481,7 @@ class Gui(tk.Frame):
             r2_outer = qmax**2
             i, j, k = np.meshgrid(np.arange(xdim), np.arange(ydim), np.arange(zdim))
             r2 = (i - xdim // 2) ** 2 + (j - ydim // 2) ** 2 + (k - zdim // 2) ** 2
-            mask = (r2 <= r2_inner) | (r2 >= r2_outer)  # True if voxel is out of range
+            mask = (r2 < r2_inner) | (r2 > r2_outer)  # True if voxel is out of range
             sphere[mask] = np.nan  # therefore set to np.nan if out of range
 
             if self.space.get():
