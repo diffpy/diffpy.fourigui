@@ -1,6 +1,6 @@
 **Added:**
 
-* Documentation-level fix.
+* <news item>
 
 **Changed:**
 
@@ -16,7 +16,7 @@
 
 **Fixed:**
 
-* <news item>
+* Added Sphinx imports to fix documentation rendering.
 
 **Security:**
 
