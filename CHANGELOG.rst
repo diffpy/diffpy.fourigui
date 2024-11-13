@@ -37,4 +37,3 @@ Release Notes
 
 * debug.py file for running tests
 * Removed support for python `<3.11`
-
