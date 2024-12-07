@@ -13,3 +13,4 @@ jobs:
     with:
       project: diffpy.fourigui
       c_extension: false
+      headless: true
