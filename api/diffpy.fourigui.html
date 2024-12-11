@@ -77,8 +77,118 @@
 <p>Tool for visualizing 3D diffraction and PDF Images.</p>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
-<section id="diffpy-fourigui-fourigui-module">
-<h3>diffpy.fourigui.fourigui module<a class="headerlink" href="#diffpy-fourigui-fourigui-module" title="Link to this heading"></a></h3>
+<section id="module-diffpy.fourigui.fourigui">
+<span id="diffpy-fourigui-fourigui-module"></span><h3>diffpy.fourigui.fourigui module<a class="headerlink" href="#module-diffpy.fourigui.fourigui" title="Link to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.Gui">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">diffpy.fourigui.fourigui.</span></span><span class="sig-name descname"><span class="pre">Gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#Gui"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.Gui" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.Gui.animation">
+<span class="sig-name descname"><span class="pre">animation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#Gui.animation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.Gui.animation" title="Link to this definition"></a></dt>
+<dd><p>slices through the 3D array along the selected axis</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.Gui.applycutoff">
+<span class="sig-name descname"><span class="pre">applycutoff</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#Gui.applycutoff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.Gui.applycutoff" title="Link to this definition"></a></dt>
+<dd><p>shape the reciprocal-space array</p>
+<p>reassign all voxels with distance smaller than qmin and greater than qmax
+to np.nan.</p>
+<section id="parameters">
+<h4>parameters:<a class="headerlink" href="#parameters" title="Link to this heading"></a></h4>
+<p>qmin, qmax is loaded from the qmin, qmax input panel
+currently operates in units of pixels</p>
+</section>
+<section id="returns">
+<h4>Returns:<a class="headerlink" href="#returns" title="Link to this heading"></a></h4>
+<p>nothing</p>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.Gui.colorrange_upd">
+<span class="sig-name descname"><span class="pre">colorrange_upd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#Gui.colorrange_upd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.Gui.colorrange_upd" title="Link to this definition"></a></dt>
+<dd><p>change color range in plot</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.Gui.fft">
+<span class="sig-name descname"><span class="pre">fft</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#Gui.fft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.Gui.fft" title="Link to this definition"></a></dt>
+<dd><p>Fourier transform 3D array from reciprocal to real space
+the origin of reciprocal and real space is expected to be the central voxel</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.Gui.ifft">
+<span class="sig-name descname"><span class="pre">ifft</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#Gui.ifft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.Gui.ifft" title="Link to this definition"></a></dt>
+<dd><p>Inverse Fourier transform 3D array from real to reciprocal space
+the origin of real and reciprocal space is expected to be the central voxel</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.Gui.initUI">
+<span class="sig-name descname"><span class="pre">initUI</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#Gui.initUI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.Gui.initUI" title="Link to this definition"></a></dt>
+<dd><p>Initialize the GUI for fourigui</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.Gui.intensity_upd_global">
+<span class="sig-name descname"><span class="pre">intensity_upd_global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#Gui.intensity_upd_global"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.Gui.intensity_upd_global" title="Link to this definition"></a></dt>
+<dd><p>Load global intensity minimum, maximum and sum of 3D array</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.Gui.intensity_upd_local">
+<span class="sig-name descname"><span class="pre">intensity_upd_local</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#Gui.intensity_upd_local"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.Gui.intensity_upd_local" title="Link to this definition"></a></dt>
+<dd><p>show local intensity minimum, maximum and sum of current plotted plane</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.Gui.load_cube">
+<span class="sig-name descname"><span class="pre">load_cube</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#Gui.load_cube"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.Gui.load_cube" title="Link to this definition"></a></dt>
+<dd><p>loads 3D array in h5py file format from the filename input panel
+3D array is expected to be a reconstructed reciprocal scattering volume
+when executed, one slide perpendicular to the selected axis will be plotted in the plot panel</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.Gui.multiple_funcs">
+<span class="sig-name descname"><span class="pre">multiple_funcs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#Gui.multiple_funcs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.Gui.multiple_funcs" title="Link to this definition"></a></dt>
+<dd><p>Executes multiple functions passed as arguments in sequence.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.Gui.newcutoff">
+<span class="sig-name descname"><span class="pre">newcutoff</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#Gui.newcutoff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.Gui.newcutoff" title="Link to this definition"></a></dt>
+<dd><p>Apply a new cutoff based on the current space and cutoff settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.Gui.plot_next_plane">
+<span class="sig-name descname"><span class="pre">plot_next_plane</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#Gui.plot_next_plane"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.Gui.plot_next_plane" title="Link to this definition"></a></dt>
+<dd><p>Plot the next plane in the dataset, looping back to the first if at the end.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.Gui.plot_plane">
+<span class="sig-name descname"><span class="pre">plot_plane</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#Gui.plot_plane"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.Gui.plot_plane" title="Link to this definition"></a></dt>
+<dd><p>update plotted plane perpendicular to the selected axis</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.Gui.redocutuff">
+<span class="sig-name descname"><span class="pre">redocutuff</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#Gui.redocutuff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.Gui.redocutuff" title="Link to this definition"></a></dt>
+<dd><p>Redo the cutoff operation depending on the current space (real or reciprocal).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="diffpy.fourigui.fourigui.main">
+<span class="sig-prename descclassname"><span class="pre">diffpy.fourigui.fourigui.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/diffpy/fourigui/fourigui.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#diffpy.fourigui.fourigui.main" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 </section>
 </section>
 </section>
