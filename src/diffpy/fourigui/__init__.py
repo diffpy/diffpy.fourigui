@@ -12,7 +12,6 @@
 # See LICENSE.rst for license information.
 #
 ##############################################################################
-
 """Tool for visualizing 3D diffraction and PDF Images."""
 
 # package version

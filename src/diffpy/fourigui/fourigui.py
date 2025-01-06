@@ -21,7 +21,7 @@ class Gui(tk.Frame):
         self.initUI()
 
     def initUI(self):
-        """Initialize the GUI for fourigui"""
+        """Initialize the GUI for fourigui."""
 
         self.loaded = False  # denotes whether a dataset is loaded
         self.transformed = False  # denotes whether dataset is Fourier transformed
@@ -254,11 +254,10 @@ class Gui(tk.Frame):
         frame11.place(x=WIDTH // 2, y=HEIGHT // 2)  # , height=HEIGHT//2, width=WIDTH//2)
 
     def load_cube(self):
-        """
-        loads 3D array in h5py file format from the filename input panel
-        3D array is expected to be a reconstructed reciprocal scattering volume
-        when executed, one slide perpendicular to the selected axis will be plotted in the plot panel
-        """
+        """Loads 3D array in h5py file format from the filename input panel 3D
+        array is expected to be a reconstructed reciprocal scattering volume
+        when executed, one slide perpendicular to the selected axis will be
+        plotted in the plot panel."""
 
         filename = self.filename_entry.get()
         f = h5py.File(filename, "r")
@@ -327,7 +326,7 @@ class Gui(tk.Frame):
         self.intensity_upd_global()
 
     def plot_plane(self):
-        """update plotted plane perpendicular to the selected axis"""
+        """Update plotted plane perpendicular to the selected axis."""
         if self.axis.get() == 0:
             self.im.set_data(self.cube[self.plane_num.get(), :, :])
         elif self.axis.get() == 1:
@@ -339,7 +338,7 @@ class Gui(tk.Frame):
         self.canvas.draw()
 
     def colorrange_upd(self):
-        """change color range in plot"""
+        """Change color range in plot."""
         try:
             if self.colorbarmin.get() and self.colorbarmax.get():
                 vmin = float(self.colorbarmin.get())
@@ -359,7 +358,8 @@ class Gui(tk.Frame):
         self.plot_plane()
 
     def intensity_upd_local(self):
-        """show local intensity minimum, maximum and sum of current plotted plane"""
+        """Show local intensity minimum, maximum and sum of current plotted
+        plane."""
         if self.axis.get() == 0:
             plane = self.cube[self.plane_num.get(), :, :]
         elif self.axis.get() == 1:
@@ -373,7 +373,7 @@ class Gui(tk.Frame):
         self.localnanratio["text"] = f"{round(nan_ratio, 2)}"
 
     def intensity_upd_global(self):
-        """Load global intensity minimum, maximum and sum of 3D array"""
+        """Load global intensity minimum, maximum and sum of 3D array."""
         self.intensity_upd_local()
         nan_ratio = np.count_nonzero(np.isnan(self.cube)) / self.cube.size
         self.globalmax["text"] = f"{np.format_float_scientific(np.nanmax(self.cube), 1)}"
@@ -382,10 +382,8 @@ class Gui(tk.Frame):
         self.globalnanratio["text"] = "{}".format(round(nan_ratio, 2))
 
     def fft(self):
-        """
-        Fourier transform 3D array from reciprocal to real space
-        the origin of reciprocal and real space is expected to be the central voxel
-        """
+        """Fourier transform 3D array from reciprocal to real space the origin
+        of reciprocal and real space is expected to be the central voxel."""
 
         def perform_fft(fftholder):
             fftholder = np.nan_to_num(fftholder)
@@ -438,10 +436,9 @@ class Gui(tk.Frame):
         self.intensity_upd_global()
 
     def ifft(self):
-        """
-        Inverse Fourier transform 3D array from real to reciprocal space
-        the origin of real and reciprocal space is expected to be the central voxel
-        """
+        """Inverse Fourier transform 3D array from real to reciprocal space the
+        origin of real and reciprocal space is expected to be the central
+        voxel."""
         if not self.cutoff.get():
             self.cube_real = self.cube
             self.cube = self.cube_reci
@@ -455,8 +452,7 @@ class Gui(tk.Frame):
         self.intensity_upd_global()
 
     def applycutoff(self):
-        """
-        shape the reciprocal-space array
+        """Shape the reciprocal-space array.
 
         reassign all voxels with distance smaller than qmin and greater than qmax
         to np.nan.
@@ -507,9 +503,8 @@ class Gui(tk.Frame):
             self.intensity_upd_global()
 
     def redocutuff(self):
-        """
-        Redo the cutoff operation depending on the current space (real or reciprocal).
-        """
+        """Redo the cutoff operation depending on the current space (real or
+        reciprocal)."""
         if self.space.get():  # in real space
             self.cube_realcut = self.cube
             if not self.transformed:
@@ -522,9 +517,8 @@ class Gui(tk.Frame):
         self.intensity_upd_global()
 
     def newcutoff(self):
-        """
-        Apply a new cutoff based on the current space and cutoff settings.
-        """
+        """Apply a new cutoff based on the current space and cutoff
+        settings."""
         if self.cutoff.get():
             if self.space.get() and self.transformed:
                 self.cube = self.cube_real
@@ -535,9 +529,8 @@ class Gui(tk.Frame):
         self.applycutoff()
 
     def plot_next_plane(self):
-        """
-        Plot the next plane in the dataset, looping back to the first if at the end.
-        """
+        """Plot the next plane in the dataset, looping back to the first if at
+        the end."""
         n = self.plane_num.get()
         if n == len(self.cube[self.axis.get()]) - 1:
             n = 0
@@ -547,9 +540,7 @@ class Gui(tk.Frame):
         self.plot_plane()
 
     def animation(self):
-        """
-        slices through the 3D array along the selected axis
-        """
+        """Slices through the 3D array along the selected axis."""
         try:
             if not self.anientry.get():
                 anispeed = 1
@@ -563,9 +554,7 @@ class Gui(tk.Frame):
         self.plot_next_plane()
 
     def multiple_funcs(*funcs):
-        """
-        Executes multiple functions passed as arguments in sequence.
-        """
+        """Executes multiple functions passed as arguments in sequence."""
         for func in funcs:
             func
 
