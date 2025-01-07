@@ -5,7 +5,10 @@ import h5py
 import matplotlib
 import numpy as np
 from matplotlib import pyplot as plt
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+from matplotlib.backends.backend_tkagg import (
+    FigureCanvasTkAgg,
+    NavigationToolbar2Tk,
+)
 
 matplotlib.use("tkagg")
 
@@ -24,15 +27,21 @@ class Gui(tk.Frame):
         """Initialize the GUI for fourigui."""
 
         self.loaded = False  # denotes whether a dataset is loaded
-        self.transformed = False  # denotes whether dataset is Fourier transformed
-        self.cutted = False  # denotes whether cutoff frequencies are applied to dataset
+        self.transformed = (
+            False  # denotes whether dataset is Fourier transformed
+        )
+        self.cutted = (
+            False  # denotes whether cutoff frequencies are applied to dataset
+        )
         self.transcutted = False  # denotes whether cutoff frequencies are applied and Fourier transformed
 
         self.master.title("FouriGUI")
         self.pack(fill=tk.BOTH, expand=True)
 
         print("\nNew Session started ...")
-        print("Enjoy exploring the beautiful reconstructions in real and in reciprocal space!")
+        print(
+            "Enjoy exploring the beautiful reconstructions in real and in reciprocal space!"
+        )
 
         # 4 frames:
         # frame 00: all buttons
@@ -54,7 +63,9 @@ class Gui(tk.Frame):
         self.filename_entry.grid(row=0, column=1, columnspan=3)
         self.filename_entry.insert(0, "/path/data.h5")
 
-        loadbutton = Button(frame00, text="load", command=lambda: self.load_cube())
+        loadbutton = Button(
+            frame00, text="load", command=lambda: self.load_cube()
+        )
         loadbutton.grid(row=0, column=4)
 
         # row 1: change axis area
@@ -125,7 +136,9 @@ class Gui(tk.Frame):
         self.colorbarmax.grid(row=3, column=3)
         self.colorbarmin = tk.Entry(frame00, width=7)
         self.colorbarmin.grid(row=4, column=3)
-        set_range = Button(frame00, text="set range", command=lambda: self.colorrange_upd())
+        set_range = Button(
+            frame00, text="set range", command=lambda: self.colorrange_upd()
+        )
         set_range.grid(row=2, column=4)
         toglobalmax = Button(
             frame00,
@@ -151,7 +164,9 @@ class Gui(tk.Frame):
         anilabel.grid(row=7, column=3, columnspan=2, sticky=tk.W)
         self.anientry = tk.Entry(frame00, width=7)
         self.anientry.grid(row=8, column=3)
-        anibutton = Button(frame00, text="animation", command=lambda: self.animation())
+        anibutton = Button(
+            frame00, text="animation", command=lambda: self.animation()
+        )
         anibutton.grid(row=8, column=4)
 
         # row 10-12 Fourier transformation
@@ -170,7 +185,9 @@ class Gui(tk.Frame):
         self.qmaxentry = tk.Entry(frame00, width=7)
         self.qmaxentry.grid(row=12, column=3)
         self.cutoff = tk.IntVar()
-        newcutoffbutton = Button(frame00, text="new cutoff", command=lambda: self.newcutoff())
+        newcutoffbutton = Button(
+            frame00, text="new cutoff", command=lambda: self.newcutoff()
+        )
         newcutoffbutton.grid(row=10, column=4)
         cutoffon = tk.Radiobutton(
             frame00,
@@ -225,13 +242,19 @@ class Gui(tk.Frame):
             label="slider",
             orient=tk.HORIZONTAL,
             length=WIDTH // 2,  # resolution=-1,
-            command=lambda x: self.multiple_funcs(self.plot_plane(), self.intensity_upd_local()),
+            command=lambda x: self.multiple_funcs(
+                self.plot_plane(), self.intensity_upd_local()
+            ),
         )
         # command=lambda p: self.plot_plane())
-        self.slider.grid(row=0, column=0, padx=10, pady=10, sticky=tk.N + tk.E + tk.S + tk.W)
+        self.slider.grid(
+            row=0, column=0, padx=10, pady=10, sticky=tk.N + tk.E + tk.S + tk.W
+        )
 
         self.frame01_plotcell = tk.Frame(self.frame01)
-        self.frame01_plotcell.grid(row=1, column=0, padx=10, pady=10, sticky=tk.N + tk.E + tk.S + tk.W)
+        self.frame01_plotcell.grid(
+            row=1, column=0, padx=10, pady=10, sticky=tk.N + tk.E + tk.S + tk.W
+        )
 
         self.frame01_toolbar = tk.Frame(self.frame01)
         self.frame01_toolbar.grid(row=2, column=0)
@@ -239,11 +262,15 @@ class Gui(tk.Frame):
         # 10 #
         # frame 10, lower left
         frame10 = tk.Frame(self)
-        frame10.place(x=5, y=HEIGHT - 30)  # , height=HEIGHT//2, width=WIDTH//2)
+        frame10.place(
+            x=5, y=HEIGHT - 30
+        )  # , height=HEIGHT//2, width=WIDTH//2)
         quit = Button(
             frame10,
             text="exit",
-            command=lambda: self.multiple_funcs(print("Session ended...\n", self.quit())),
+            command=lambda: self.multiple_funcs(
+                print("Session ended...\n", self.quit())
+            ),
         )
         quit.pack(side=tk.TOP)
 
@@ -251,7 +278,9 @@ class Gui(tk.Frame):
         # frame 00, lower right
         # no functionality
         frame11 = tk.Frame(self)
-        frame11.place(x=WIDTH // 2, y=HEIGHT // 2)  # , height=HEIGHT//2, width=WIDTH//2)
+        frame11.place(
+            x=WIDTH // 2, y=HEIGHT // 2
+        )  # , height=HEIGHT//2, width=WIDTH//2)
 
     def load_cube(self):
         """Loads 3D array in h5py file format from the filename input panel 3D
@@ -285,9 +314,13 @@ class Gui(tk.Frame):
             label="slider",
             orient=tk.HORIZONTAL,
             length=WIDTH // 2,  # resolution=-1,
-            command=lambda x: self.multiple_funcs(self.plot_plane(), self.intensity_upd_local()),
+            command=lambda x: self.multiple_funcs(
+                self.plot_plane(), self.intensity_upd_local()
+            ),
         )
-        self.slider.grid(row=0, column=0, padx=10, pady=10, sticky=tk.N + tk.E + tk.S + tk.W)
+        self.slider.grid(
+            row=0, column=0, padx=10, pady=10, sticky=tk.N + tk.E + tk.S + tk.W
+        )
 
         if not self.loaded:
             fig, ax = plt.subplots(figsize=(4.95, 4.95))
@@ -307,13 +340,17 @@ class Gui(tk.Frame):
             ax.set_xlabel("pixel")
             ax.set_ylabel("pixel")
             self.canvas = FigureCanvasTkAgg(fig, master=self.frame01_plotcell)
-            self.toolbar = NavigationToolbar2Tk(self.canvas, self.frame01_toolbar)
+            self.toolbar = NavigationToolbar2Tk(
+                self.canvas, self.frame01_toolbar
+            )
             self.toolbar.pack(side=tk.LEFT)
             # self.toolbar.children['!button6'].pack_forget()
             # self.toolbar.children['!button7'].pack_forget()
             self.toolbar.update()
             self.canvas.draw()
-            self.canvas.get_tk_widget().pack(side=tk.LEFT, fill=tk.BOTH, expand=1)
+            self.canvas.get_tk_widget().pack(
+                side=tk.LEFT, fill=tk.BOTH, expand=1
+            )
             self.loaded = True
         else:
             self.plot_plane()
@@ -367,18 +404,30 @@ class Gui(tk.Frame):
         elif self.axis.get() == 2:
             plane = self.cube[:, :, self.plane_num.get()]
         nan_ratio = np.count_nonzero(np.isnan(plane)) / plane.size
-        self.localmax["text"] = f"{np.format_float_scientific(np.nanmax(plane), 1)}"
-        self.localmin["text"] = f"{np.format_float_scientific(np.nanmin(plane), 1)}"
-        self.localsum["text"] = f"{np.format_float_scientific(np.nansum(plane), 1)}"
+        self.localmax["text"] = (
+            f"{np.format_float_scientific(np.nanmax(plane), 1)}"
+        )
+        self.localmin["text"] = (
+            f"{np.format_float_scientific(np.nanmin(plane), 1)}"
+        )
+        self.localsum["text"] = (
+            f"{np.format_float_scientific(np.nansum(plane), 1)}"
+        )
         self.localnanratio["text"] = f"{round(nan_ratio, 2)}"
 
     def intensity_upd_global(self):
         """Load global intensity minimum, maximum and sum of 3D array."""
         self.intensity_upd_local()
         nan_ratio = np.count_nonzero(np.isnan(self.cube)) / self.cube.size
-        self.globalmax["text"] = f"{np.format_float_scientific(np.nanmax(self.cube), 1)}"
-        self.globalmin["text"] = f"{np.format_float_scientific(np.nanmin(self.cube), 1)}"
-        self.globalsum["text"] = f"{np.format_float_scientific(np.nansum(self.cube), 1)}"
+        self.globalmax["text"] = (
+            f"{np.format_float_scientific(np.nanmax(self.cube), 1)}"
+        )
+        self.globalmin["text"] = (
+            f"{np.format_float_scientific(np.nanmin(self.cube), 1)}"
+        )
+        self.globalsum["text"] = (
+            f"{np.format_float_scientific(np.nansum(self.cube), 1)}"
+        )
         self.globalnanratio["text"] = "{}".format(round(nan_ratio, 2))
 
     def fft(self):
@@ -475,9 +524,17 @@ class Gui(tk.Frame):
             # convert qmax to pixels
             r2_inner = qmin**2
             r2_outer = qmax**2
-            i, j, k = np.meshgrid(np.arange(xdim), np.arange(ydim), np.arange(zdim))
-            r2 = (i - xdim // 2) ** 2 + (j - ydim // 2) ** 2 + (k - zdim // 2) ** 2
-            mask = (r2 < r2_inner) | (r2 > r2_outer)  # True if voxel is out of range
+            i, j, k = np.meshgrid(
+                np.arange(xdim), np.arange(ydim), np.arange(zdim)
+            )
+            r2 = (
+                (i - xdim // 2) ** 2
+                + (j - ydim // 2) ** 2
+                + (k - zdim // 2) ** 2
+            )
+            mask = (r2 < r2_inner) | (
+                r2 > r2_outer
+            )  # True if voxel is out of range
             sphere[mask] = np.nan  # therefore set to np.nan if out of range
 
             if self.space.get():
@@ -547,7 +604,9 @@ class Gui(tk.Frame):
             else:
                 anispeed = self.anientry.get()
         except ValueError:
-            print("Oops... animation speed must be an integer > 0 or empty string.")
+            print(
+                "Oops... animation speed must be an integer > 0 or empty string."
+            )
         n = self.plane_num.get() - 1
         while n is not self.plane_num.get():
             self.slider.after(anispeed, self.plot_next_plane())

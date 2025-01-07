@@ -60,7 +60,9 @@ class TestGui(unittest.TestCase):
         self.test_gui.fft()
 
         # then
-        self.assertTrue(self.test_gui.transformed and not self.test_gui.transcutted)
+        self.assertTrue(
+            self.test_gui.transformed and not self.test_gui.transcutted
+        )
 
     def test_fft_010(self):
         # given
@@ -76,7 +78,9 @@ class TestGui(unittest.TestCase):
         self.test_gui.fft()
 
         # then
-        self.assertTrue(not self.test_gui.transformed and self.test_gui.transcutted)
+        self.assertTrue(
+            not self.test_gui.transformed and self.test_gui.transcutted
+        )
         # self.assertTrue(self.test_gui.cutted)
 
     def test_fft_001(self):
@@ -94,7 +98,9 @@ class TestGui(unittest.TestCase):
         self.test_gui.fft()
 
         # then
-        self.assertTrue(self.test_gui.transformed and self.test_gui.transcutted)
+        self.assertTrue(
+            self.test_gui.transformed and self.test_gui.transcutted
+        )
 
     def test_fft_011(self):
         # given
@@ -111,7 +117,9 @@ class TestGui(unittest.TestCase):
         self.test_gui.fft()
 
         # then
-        self.assertTrue(not self.test_gui.transformed and self.test_gui.transcutted)
+        self.assertTrue(
+            not self.test_gui.transformed and self.test_gui.transcutted
+        )
 
     def test_fft_101(self):
         # given
@@ -128,7 +136,9 @@ class TestGui(unittest.TestCase):
         self.test_gui.fft()
 
         # then
-        self.assertTrue(self.test_gui.transformed and self.test_gui.transcutted)
+        self.assertTrue(
+            self.test_gui.transformed and self.test_gui.transcutted
+        )
 
     def test_fft_111(self):
         # given
@@ -145,7 +155,9 @@ class TestGui(unittest.TestCase):
         self.test_gui.fft()
 
         # then
-        self.assertTrue(self.test_gui.transformed and self.test_gui.transcutted)
+        self.assertTrue(
+            self.test_gui.transformed and self.test_gui.transcutted
+        )
 
 
 def test_applycutoff(mocker):
@@ -155,7 +167,9 @@ def test_applycutoff(mocker):
     # pixels as NaN's
     mocker.patch.object(fg.qminentry, "get", return_value=1.0)
     mocker.patch.object(fg.qmaxentry, "get", return_value=2.0)
-    mocker.patch.object(fg, "plot_plane")  # we don't want it to plot anything so intercept
+    mocker.patch.object(
+        fg, "plot_plane"
+    )  # we don't want it to plot anything so intercept
     fg.cutted = False
     fg.cube = np.ones((5, 5, 5))
     expected_ones = np.ones((5, 5, 5))

@@ -13,11 +13,19 @@ class TestGui(unittest.TestCase):
 
         # set up test data
         self.test_sofq = h5py.File("tests/testdata/sofq.h5")["data"]
-        self.test_sofq_cut_10to40px = h5py.File("tests/testdata/sofq_cut_10to40px.h5")["data"]
-        self.test_sofq_cut_15to35px = h5py.File("tests/testdata/sofq_cut_15to35px.h5")["data"]
+        self.test_sofq_cut_10to40px = h5py.File(
+            "tests/testdata/sofq_cut_10to40px.h5"
+        )["data"]
+        self.test_sofq_cut_15to35px = h5py.File(
+            "tests/testdata/sofq_cut_15to35px.h5"
+        )["data"]
         self.test_gofr = h5py.File("tests/testdata/gofr.h5")["data"]
-        self.test_gofr_cut_10to40px = h5py.File("tests/testdata/gofr_from_sofq_cut_10to40px.h5")["data"]
-        self.test_gofr_cut_15to35px = h5py.File("tests/testdata/gofr_from_sofq_cut_15to35px.h5")["data"]
+        self.test_gofr_cut_10to40px = h5py.File(
+            "tests/testdata/gofr_from_sofq_cut_10to40px.h5"
+        )["data"]
+        self.test_gofr_cut_15to35px = h5py.File(
+            "tests/testdata/gofr_from_sofq_cut_15to35px.h5"
+        )["data"]
 
     def test_load_cube_testdataset1(self):
         # given
@@ -34,26 +42,40 @@ class TestGui(unittest.TestCase):
     def test_load_cube_testdataset2(self):
         # given
         self.test_gui.filename_entry.delete(0, "end")
-        self.test_gui.filename_entry.insert(0, "tests/testdata/sofq_cut_10to40px.h5")
+        self.test_gui.filename_entry.insert(
+            0, "tests/testdata/sofq_cut_10to40px.h5"
+        )
 
         # when
         self.test_gui.load_cube()
         result = self.test_gui.cube
 
         # then
-        self.assertTrue(np.allclose(np.nan_to_num(result), np.nan_to_num(self.test_sofq_cut_10to40px)))
+        self.assertTrue(
+            np.allclose(
+                np.nan_to_num(result),
+                np.nan_to_num(self.test_sofq_cut_10to40px),
+            )
+        )
 
     def test_load_cube_testdataset3(self):
         # given
         self.test_gui.filename_entry.delete(0, "end")
-        self.test_gui.filename_entry.insert(0, "tests/testdata/sofq_cut_15to35px.h5")
+        self.test_gui.filename_entry.insert(
+            0, "tests/testdata/sofq_cut_15to35px.h5"
+        )
 
         # when
         self.test_gui.load_cube()
         result = self.test_gui.cube
 
         # then
-        self.assertTrue(np.allclose(np.nan_to_num(result), np.nan_to_num(self.test_sofq_cut_15to35px)))
+        self.assertTrue(
+            np.allclose(
+                np.nan_to_num(result),
+                np.nan_to_num(self.test_sofq_cut_15to35px),
+            )
+        )
 
     def test_fft_testdataset1(self):
         # given
