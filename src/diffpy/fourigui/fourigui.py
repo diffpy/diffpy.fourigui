@@ -33,14 +33,17 @@ class Gui(tk.Frame):
         self.cutted = (
             False  # denotes whether cutoff frequencies are applied to dataset
         )
-        self.transcutted = False  # denotes whether cutoff frequencies are applied and Fourier transformed
+        self.transcutted = (
+            False  # denotes whether cutoff frequencies are applied
+        )
+        # and Fourier transformed
 
         self.master.title("FouriGUI")
         self.pack(fill=tk.BOTH, expand=True)
 
         print("\nNew Session started ...")
         print(
-            "Enjoy exploring the beautiful reconstructions in real and in reciprocal space!"
+            "Enjoy exploring the beautiful reconstructions in real and in reciprocal space!"  # noqa: E501
         )
 
         # 4 frames:
@@ -170,9 +173,7 @@ class Gui(tk.Frame):
         anibutton.grid(row=8, column=4)
 
         # row 10-12 Fourier transformation
-        separator = tk.Label(
-            frame00, text=" "
-        )  # __________________________________________________________________")
+        separator = tk.Label(frame00, text=" ")
         separator.grid(row=9, column=0, columnspan=5)
         cutofflabel = tk.Label(frame00, text="cutoff frequency")
         cutofflabel.grid(row=10, column=2, columnspan=2)
@@ -503,8 +504,8 @@ class Gui(tk.Frame):
     def applycutoff(self):
         """Shape the reciprocal-space array.
 
-        reassign all voxels with distance smaller than qmin and greater than qmax
-        to np.nan.
+        reassign all voxels with distance smaller than qmin and greater than
+        qmax to np.nan.
 
         parameters:
         -----------
@@ -605,7 +606,7 @@ class Gui(tk.Frame):
                 anispeed = self.anientry.get()
         except ValueError:
             print(
-                "Oops... animation speed must be an integer > 0 or empty string."
+                "Oops... animation speed must be an integer > 0 or empty string."  # noqa: E501
             )
         n = self.plane_num.get() - 1
         while n is not self.plane_num.get():

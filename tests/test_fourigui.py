@@ -227,7 +227,8 @@ def test_applycutoff(mocker):
     mocker.patch.object(fg.qmaxentry, "get", return_value=2)
     mocker.patch.object(
         fg, "fft"
-    )  # we don't want it to do the fft so intercept.  Should be tested separately (fixme).
+    )  # we don't want it to do the fft so intercept.
+    # Should be tested separately (fixme).
     fg.cutted = False
     fg.cube_reci = np.ones((5, 5, 5))
     fg.cube = np.ones((5, 5, 5))
