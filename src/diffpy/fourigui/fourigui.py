@@ -43,7 +43,8 @@ class Gui(tk.Frame):
 
         print("\nNew Session started ...")
         print(
-            "Enjoy exploring the beautiful reconstructions in real and in reciprocal space!"  # noqa: E501
+            "Enjoy exploring the beautiful reconstructions in real and in "
+            "reciprocal space!"
         )
 
         # 4 frames:
@@ -606,7 +607,8 @@ class Gui(tk.Frame):
                 anispeed = self.anientry.get()
         except ValueError:
             print(
-                "Oops... animation speed must be an integer > 0 or empty string."  # noqa: E501
+                "Oops... animation speed must be an integer > 0 "
+                "or empty string."
             )
         n = self.plane_num.get() - 1
         while n is not self.plane_num.get():
