@@ -35,7 +35,7 @@
 .. |Tracking| image:: https://img.shields.io/badge/issue_tracking-github-blue
         :target: https://github.com/diffpy/diffpy.fourigui/issues
 
-Tool for visualizing 3D diffraction and PDF Images.
+Tool for visualizing 3D diffraction and PDF images.
 
 Diffpy.fourigui is a tool to visualize and process 3D data sets written with the Python programming language.
 Diffpy.fourigui always displays one slice perpendicular to one axis and allows scrolling through the 3D data set along

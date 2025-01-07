@@ -4,7 +4,7 @@
 
 .. |title| replace:: diffpy.fourigui documentation
 
-diffpy.fourigui - Tool for visualizing 3D diffraction and PDF Images..
+diffpy.fourigui - Tool for visualizing 3D diffraction and PDF images.
 
 | Software version |release|.
 | Last updated |today|.
@@ -36,7 +36,6 @@ Table of contents
    license
    release
    Package API <api/diffpy.fourigui>
-
 
 =======
 Indices

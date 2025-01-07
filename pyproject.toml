@@ -6,13 +6,13 @@ build-backend = "setuptools.build_meta"
 name = "diffpy.fourigui"
 dynamic=['version', 'dependencies']
 authors = [
-  { name="Simon J.L. Billinge group", email="simon.billinge@gmail.com" },
+  { name="Simon Billinge", email="sb2896@columbia.edu" },
 ]
 maintainers = [
-  { name="Simon J.L. Billinge group", email="simon.billinge@gmail.com" },
+  { name="Simon Billinge", email="sb2896@columbia.edu" },
 ]
-description = "Tool for visualizing 3D diffraction and PDF Images."
-keywords = ['diffraction', 'pdf', 'pair distribution function', 'gui']
+description = "Tool for visualizing 3D diffraction and PDF images."
+keywords = ['diffraction', 'PDF', 'pair distribution function', 'gui']
 readme = "README.rst"
 requires-python = ">=3.11, <3.14"
 classifiers = [
@@ -60,7 +60,7 @@ ignore-words = ".codespell/ignore_words.txt"
 skip = "*.cif,*.dat"
 
 [tool.black]
-line-length = 115
+line-length = 79
 include = '\.pyi?$'
 exclude = '''
 /(
