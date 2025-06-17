@@ -6,3 +6,6 @@ mater
 
 ;; Frobenius norm used in np.linalg.norm
 fro
+
+;; cutted used as attribute in unit_test.py and fourigui.py
+cutted
