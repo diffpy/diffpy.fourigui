@@ -1,6 +1,6 @@
 """Unit tests for __version__.py."""
 
-import diffpy.fourigui
+import diffpy.fourigui  # noqa
 
 
 def test_package_version():
