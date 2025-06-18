@@ -7,7 +7,7 @@
 # File coded by: Billinge Group members and community contributors.
 #
 # See GitHub contributions for a more detailed list of contributors.
-# https://github.com/diffpy/diffpy.fourigui/graphs/contributors
+# https://github.com/diffpy/diffpy.fourigui/graphs/contributors  # noqa: E501
 #
 # See LICENSE.rst for license information.
 #
