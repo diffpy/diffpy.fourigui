@@ -285,10 +285,10 @@ class Gui(tk.Frame):
         )  # , height=HEIGHT//2, width=WIDTH//2)
 
     def load_cube(self):
-        """Loads 3D array in h5py file format from the filename input panel 3D
-        array is expected to be a reconstructed reciprocal scattering volume
-        when executed, one slide perpendicular to the selected axis will be
-        plotted in the plot panel."""
+        """Loads 3D array in h5py file format from the filename input
+        panel 3D array is expected to be a reconstructed reciprocal
+        scattering volume when executed, one slide perpendicular to the
+        selected axis will be plotted in the plot panel."""
 
         filename = self.filename_entry.get()
         f = h5py.File(filename, "r")
@@ -397,8 +397,8 @@ class Gui(tk.Frame):
         self.plot_plane()
 
     def intensity_upd_local(self):
-        """Show local intensity minimum, maximum and sum of current plotted
-        plane."""
+        """Show local intensity minimum, maximum and sum of current
+        plotted plane."""
         if self.axis.get() == 0:
             plane = self.cube[self.plane_num.get(), :, :]
         elif self.axis.get() == 1:
@@ -418,7 +418,8 @@ class Gui(tk.Frame):
         self.localnanratio["text"] = f"{round(nan_ratio, 2)}"
 
     def intensity_upd_global(self):
-        """Load global intensity minimum, maximum and sum of 3D array."""
+        """Load global intensity minimum, maximum and sum of 3D
+        array."""
         self.intensity_upd_local()
         nan_ratio = np.count_nonzero(np.isnan(self.cube)) / self.cube.size
         self.globalmax["text"] = (
@@ -433,8 +434,9 @@ class Gui(tk.Frame):
         self.globalnanratio["text"] = "{}".format(round(nan_ratio, 2))
 
     def fft(self):
-        """Fourier transform 3D array from reciprocal to real space the origin
-        of reciprocal and real space is expected to be the central voxel."""
+        """Fourier transform 3D array from reciprocal to real space the
+        origin of reciprocal and real space is expected to be the
+        central voxel."""
 
         def perform_fft(fftholder):
             fftholder = np.nan_to_num(fftholder)
@@ -487,9 +489,9 @@ class Gui(tk.Frame):
         self.intensity_upd_global()
 
     def ifft(self):
-        """Inverse Fourier transform 3D array from real to reciprocal space the
-        origin of real and reciprocal space is expected to be the central
-        voxel."""
+        """Inverse Fourier transform 3D array from real to reciprocal
+        space the origin of real and reciprocal space is expected to be
+        the central voxel."""
         if not self.cutoff.get():
             self.cube_real = self.cube
             self.cube = self.cube_reci
@@ -562,8 +564,8 @@ class Gui(tk.Frame):
             self.intensity_upd_global()
 
     def redocutuff(self):
-        """Redo the cutoff operation depending on the current space (real or
-        reciprocal)."""
+        """Redo the cutoff operation depending on the current space
+        (real or reciprocal)."""
         if self.space.get():  # in real space
             self.cube_realcut = self.cube
             if not self.transformed:
@@ -588,8 +590,8 @@ class Gui(tk.Frame):
         self.applycutoff()
 
     def plot_next_plane(self):
-        """Plot the next plane in the dataset, looping back to the first if at
-        the end."""
+        """Plot the next plane in the dataset, looping back to the first
+        if at the end."""
         n = self.plane_num.get()
         if n == len(self.cube[self.axis.get()]) - 1:
             n = 0
@@ -616,7 +618,8 @@ class Gui(tk.Frame):
         self.plot_next_plane()
 
     def multiple_funcs(*funcs):
-        """Executes multiple functions passed as arguments in sequence."""
+        """Executes multiple functions passed as arguments in
+        sequence."""
         for func in funcs:
             func
 
