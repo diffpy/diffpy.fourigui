@@ -30,7 +30,7 @@ class Gui(tk.Frame):
         self.transformed = (
             False  # denotes whether dataset is Fourier transformed
         )
-        self.cutted = (
+        self.cutoff_applied = (
             False  # denotes whether cutoff frequencies are applied to dataset
         )
         self.transcutted = (
@@ -358,7 +358,7 @@ class Gui(tk.Frame):
             self.plot_plane()
             self.transformed = False
             self.transcutted = False
-            self.cutted = False
+            self.cutoff_applied = False
             self.cutoff.set(0)
             self.space.set(0)
 
@@ -519,7 +519,7 @@ class Gui(tk.Frame):
         --------
         nothing
         """
-        if not self.cutted:
+        if not self.cutoff_applied:
             xdim, ydim, zdim = self.cube.shape
             sphere = np.ones((xdim, ydim, zdim))
             qmin = float(self.qminentry.get())
@@ -553,7 +553,7 @@ class Gui(tk.Frame):
                 self.plot_plane()
                 self.intensity_upd_global()
 
-            self.cutted = True
+            self.cutoff_applied = True
 
         else:
             if self.space.get():  # in real space
@@ -585,7 +585,7 @@ class Gui(tk.Frame):
                 self.cube = self.cube_real
             else:
                 self.cube = self.cube_reci
-        self.cutted = False
+        self.cutoff_applied = False
         self.transcutted = False
         self.applycutoff()
 
