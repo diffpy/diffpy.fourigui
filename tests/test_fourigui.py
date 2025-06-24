@@ -18,7 +18,7 @@ class TestGui(unittest.TestCase):
     def test_init(self):
         self.assertFalse(self.test_gui.loaded)
         self.assertFalse(self.test_gui.transformed)
-        self.assertFalse(self.test_gui.cutted)
+        self.assertFalse(self.test_gui.cutoff_applied)
         self.assertFalse(self.test_gui.transcutted)
         self.assertFalse(self.test_gui.cutoff.get())
         self.assertFalse(self.test_gui.space.get())
@@ -81,7 +81,7 @@ class TestGui(unittest.TestCase):
         self.assertTrue(
             not self.test_gui.transformed and self.test_gui.transcutted
         )
-        # self.assertTrue(self.test_gui.cutted)
+        # self.assertTrue(self.test_gui.cutoff_applied)
 
     def test_fft_001(self):
         # given
@@ -170,7 +170,7 @@ def test_applycutoff(mocker):
     mocker.patch.object(
         fg, "plot_plane"
     )  # we don't want it to plot anything so intercept
-    fg.cutted = False
+    fg.cutoff_applied = False
     fg.cube = np.ones((5, 5, 5))
     expected_ones = np.ones((5, 5, 5))
     expected_recip = np.array(
@@ -229,7 +229,7 @@ def test_applycutoff(mocker):
         fg, "fft"
     )  # we don't want it to do the fft so intercept.
     # Should be tested separately (fixme).
-    fg.cutted = False
+    fg.cutoff_applied = False
     fg.cube_reci = np.ones((5, 5, 5))
     fg.cube = np.ones((5, 5, 5))
     mocker.patch.object(fg.space, "get", return_value=1)

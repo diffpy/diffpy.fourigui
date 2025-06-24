@@ -15,7 +15,7 @@
 """Tool for visualizing 3D diffraction and PDF images."""
 
 # package version
-from diffpy.fourigui.version import __version__
+from diffpy.fourigui.version import __version__  # noqa
 
 # silence the pyflakes syntax checker
 assert __version__ or True
