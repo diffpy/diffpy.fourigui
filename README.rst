@@ -15,8 +15,8 @@
 .. |Black| image:: https://img.shields.io/badge/code_style-black-black
         :target: https://github.com/psf/black
 
-.. |CI| image:: https://github.com/diffpy/diffpy.fourigui/actions/workflows/matrix-and-codecov-on-merge-to-main.yml/badge.svg
-        :target: https://github.com/diffpy/diffpy.fourigui/actions/workflows/matrix-and-codecov-on-merge-to-main.yml
+.. |CI| image:: https://github.com/diffpy/diffpy.fourigui/actions/workflows/matrix-and-codecov.yml/badge.svg
+        :target: https://github.com/diffpy/diffpy.fourigui/actions/workflows/matrix-and-codecov.yml
 
 .. |Codecov| image:: https://codecov.io/gh/diffpy/diffpy.fourigui/branch/main/graph/badge.svg
         :target: https://codecov.io/gh/diffpy/diffpy.fourigui
@@ -25,6 +25,7 @@
         :target: https://anaconda.org/conda-forge/diffpy.fourigui
 
 .. |PR| image:: https://img.shields.io/badge/PR-Welcome-29ab47ff
+        :target: https://github.com/diffpy/diffpy.fourigui/pulls
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/diffpy.fourigui
         :target: https://pypi.org/project/diffpy.fourigui/
@@ -91,6 +92,19 @@ and run the following ::
 
         pip install .
 
+This package also provides command-line utilities. To check the software has been installed correctly, type ::
+
+        diffpy.fourigui --version
+
+You can also type the following command to verify the installation. ::
+
+        python -c "import diffpy.fourigui; print(diffpy.fourigui.__version__)"
+
+
+To view the basic usage and available commands, type ::
+
+        diffpy.fourigui -h
+
 Getting Started
 ---------------
 
@@ -124,12 +138,12 @@ trying to commit again.
 
 Improvements and fixes are always appreciated.
 
-Before contributing, please read our `Code of Conduct <https://github.com/diffpy/diffpy.fourigui/blob/main/CODE_OF_CONDUCT.rst>`_.
+Before contributing, please read our `Code of Conduct <https://github.com/diffpy/diffpy.fourigui/blob/main/CODE-OF-CONDUCT.rst>`_.
 
 Contact
 -------
 
-For more information on diffpy.fourigui please visit the project `web-page <https://diffpy.github.io/>`_ or email Simon Billinge at sb2896@columbia.edu.
+For more information on diffpy.fourigui please visit the project `web-page <https://diffpy.github.io/>`_ or email the maintainers ``Simon Billinge(sbillinge@ucsb.edu)``.
 
 Acknowledgements
 ----------------

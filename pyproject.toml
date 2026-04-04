@@ -6,10 +6,10 @@ build-backend = "setuptools.build_meta"
 name = "diffpy.fourigui"
 dynamic=['version', 'dependencies']
 authors = [
-  { name="Simon Billinge", email="sb2896@columbia.edu" },
+  {name='Simon Billinge', email='sbillinge@ucsb.edu'},
 ]
 maintainers = [
-  { name="Simon Billinge", email="sb2896@columbia.edu" },
+  {name='Simon Billinge', email='sbillinge@ucsb.edu'},
 ]
 description = "Tool for visualizing 3D diffraction and PDF images."
 keywords = ['diffraction', 'PDF', 'pair distribution function', 'gui']
@@ -32,9 +32,6 @@ classifiers = [
         'Topic :: Scientific/Engineering :: Chemistry',
 ]
 
-[project.scripts]
-fourigui = "diffpy.fourigui.fourigui:main"
-
 [project.urls]
 Homepage = "https://github.com/diffpy/diffpy.fourigui/"
 Issues = "https://github.com/diffpy/diffpy.fourigui/issues/"
@@ -50,6 +47,9 @@ where = ["src"]  # list of folders that contain the packages (["."] by default)
 include = ["*"]  # package names should match these glob patterns (["*"] by default)
 exclude = []  # exclude packages matching these glob patterns (empty by default)
 namespaces = false  # to disable scanning PEP 420 namespaces (true by default)
+
+[project.scripts]
+fourigui = "diffpy.fourigui.fourigui:main"
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements/pip.txt"]}
