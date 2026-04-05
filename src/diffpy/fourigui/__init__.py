@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 ##############################################################################
 #
-# (c) 2026 The Trustees of Columbia University in the City of New York.
+# (c) 2022-2025 The Trustees of Columbia University in the City of New York.
+# (c) 2026 - present, diffpy.fourigui contributors
 # All rights reserved.
 #
 # File coded by: Simon Billinge, Billinge Group members.

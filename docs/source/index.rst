@@ -21,7 +21,7 @@ To get started, please visit the :ref:`Getting started <getting-started>` page.
 Authors
 =======
 
-``diffpy.fourigui`` is developed by Simon Billinge, Billinge Group members. This project is maintained by Simon Billinge. For a detailed list of contributors see
+``diffpy.fourigui`` is developed by Billinge Group and its community contributors. For a detailed list of contributors see
 https://github.com/diffpy/diffpy.fourigui/graphs/contributors.
 
 ============
