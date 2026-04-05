@@ -1,7 +1,9 @@
 :tocdepth: -1
 
-diffpy.fourigui package
-=======================
+|title|
+=======
+
+.. |title| replace:: diffpy.fourigui package
 
 .. automodule:: diffpy.fourigui
     :members:
@@ -17,8 +19,8 @@ Subpackages
 Submodules
 ----------
 
-diffpy.fourigui.fourigui module
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|module|
+--------
 
 .. automodule:: diffpy.fourigui.fourigui
     :members:

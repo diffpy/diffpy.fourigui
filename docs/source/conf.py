@@ -32,7 +32,7 @@ sys.path.insert(0, str(Path("../..").resolve()))
 sys.path.insert(0, str(Path("../../src").resolve()))
 
 # abbreviations
-ab_authors = "Billinge Group members and community contributors"
+ab_authors = "Simon Billinge, Billinge Group members"
 
 # -- General configuration ------------------------------------------------
 
@@ -50,10 +50,8 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx_rtd_theme",
     "sphinx_copybutton",
-    "m2r",
+    "m2r2",
 ]
-
-autodoc_mock_imports = ["h5py", "tkinter", "matplotlib"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -77,7 +75,6 @@ copyright = "%Y, The Trustees of Columbia University in the City of New York"
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 
-fullversion = version(project)
 # The short X.Y version.
 version = "".join(fullversion.split(".post")[:1])
 # The full version, including alpha/beta/rc tags.
@@ -142,7 +139,7 @@ html_context = {
     "github_user": "diffpy",
     "github_repo": "diffpy.fourigui",
     "github_version": "main",
-    "conf_py_path": "/doc/source/",
+    "conf_py_path": "/docs/source/",
 }
 
 # Theme options are theme-specific and customize the look and feel of a theme

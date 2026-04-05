@@ -2,9 +2,10 @@
 ##############################################################################
 #
 # (c) 2022-2025 The Trustees of Columbia University in the City of New York.
+# (c) 2026 - present, diffpy.fourigui contributors
 # All rights reserved.
 #
-# File coded by: Billinge Group members and community contributors.
+# File coded by: Simon Billinge, Billinge Group members.
 #
 # See GitHub contributions for a more detailed list of contributors.
 # https://github.com/diffpy/diffpy.fourigui/graphs/contributors
