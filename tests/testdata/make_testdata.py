@@ -44,9 +44,9 @@ def dummydata(fname="dummydata.h5"):
     f.close()
 
 
-# cutcube("sofq.h5", "sofq_cut_10to40px.h5", 10, 40)
-# cutcube("sofq.h5", "sofq_cut_15to35px.h5", 15, 35)
+# cutcube("sofq.h5", "sofq-cut-10to40px.h5", 10, 40)
+# cutcube("sofq.h5", "sofq-cut-15to35px.h5", 15, 35)
 # fftcube("sofq.h5", "gofr.h5")
-# fftcube("sofq_cut_10to40px.h5", "gofr_from_sofq_cut_10to40px.h5")
-# fftcube("sofq_cut_15to35px.h5", "gofr_from_sofq_cut_15to35px.h5")
+# fftcube("sofq-cut-10to40px.h5", "gofr-from-sofq-cut-10to40px.h5")
+# fftcube("sofq-cut-15to35px.h5", "gofr-from-sofq-cut-15to35px.h5")
 dummydata()
