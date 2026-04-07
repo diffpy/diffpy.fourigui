@@ -14,17 +14,17 @@ class TestGui(unittest.TestCase):
         # set up test data
         self.test_sofq = h5py.File("tests/testdata/sofq.h5")["data"]
         self.test_sofq_cut_10to40px = h5py.File(
-            "tests/testdata/sofq_cut_10to40px.h5"
+            "tests/testdata/sofq-cut-10to40px.h5"
         )["data"]
         self.test_sofq_cut_15to35px = h5py.File(
-            "tests/testdata/sofq_cut_15to35px.h5"
+            "tests/testdata/sofq-cut-15to35px.h5"
         )["data"]
         self.test_gofr = h5py.File("tests/testdata/gofr.h5")["data"]
         self.test_gofr_cut_10to40px = h5py.File(
-            "tests/testdata/gofr_from_sofq_cut_10to40px.h5"
+            "tests/testdata/gofr-from-sofq-cut-10to40px.h5"
         )["data"]
         self.test_gofr_cut_15to35px = h5py.File(
-            "tests/testdata/gofr_from_sofq_cut_15to35px.h5"
+            "tests/testdata/gofr-from-sofq-cut-15to35px.h5"
         )["data"]
 
     def test_load_cube_testdataset1(self):
@@ -43,7 +43,7 @@ class TestGui(unittest.TestCase):
         # given
         self.test_gui.filename_entry.delete(0, "end")
         self.test_gui.filename_entry.insert(
-            0, "tests/testdata/sofq_cut_10to40px.h5"
+            0, "tests/testdata/sofq-cut-10to40px.h5"
         )
 
         # when
@@ -62,7 +62,7 @@ class TestGui(unittest.TestCase):
         # given
         self.test_gui.filename_entry.delete(0, "end")
         self.test_gui.filename_entry.insert(
-            0, "tests/testdata/sofq_cut_15to35px.h5"
+            0, "tests/testdata/sofq-cut-15to35px.h5"
         )
 
         # when
