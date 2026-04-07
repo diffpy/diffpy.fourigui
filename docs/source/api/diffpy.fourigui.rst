@@ -13,8 +13,8 @@
 Submodules
 ----------
 
-|module|
---------
+Module contents
+---------------
 
 .. automodule:: diffpy.fourigui.fourigui
     :members:
