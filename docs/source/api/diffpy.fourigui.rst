@@ -10,12 +10,6 @@
     :undoc-members:
     :show-inheritance:
 
-Subpackages
------------
-
-.. toctree::
-   diffpy.fourigui.example_package
-
 Submodules
 ----------
 
