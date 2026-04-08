@@ -4,6 +4,31 @@ Release notes
 
 .. current developments
 
+0.3.0
+=====
+
+**Added:**
+
+* Latest release checklist containing steps for `twine check dist/*` and `python -m build`
+* Added support for Python 3.14
+
+**Changed:**
+
+* Modify `.github` directory and `.pre-commit-config.yaml` to comply with renaming of package maintainer.
+
+**Fixed:**
+
+* Added Sphinx imports to fix documentation rendering.
+* Update copyright to 2022-2025.
+* Format code to comply with group standards.
+* API docstrings rendered with Linux GitHub CI by installing xvfb
+* Support ``scikit-package`` Level 5 standard (https://scikit-package.github.io/scikit-package/).
+
+**Removed:**
+
+* Removed support for Python 3.11
+
+
 0.2.0
 =====
 
